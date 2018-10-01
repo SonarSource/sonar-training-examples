@@ -1,16 +1,17 @@
-This example demonstrates:
-- The different size metrics (lines, LoC, Comment lines, comment %), lines to cover, conditions to cover
+# Size Metrics
 
-Usage
-=====
+This example demonstrates the different size metrics (lines, LoC, Comment lines, comment %), lines to cover, conditions to cover
 
-Run "build.sh [<optional_analysis_properties>]"
+## Usage
 
-The build.sh script takes care of building and analyzing the project
+Run `build.sh [<optional_analysis_properties>]`
+
+The `build.sh` script takes care of building and analyzing the project
 It runs:
-
+```
 mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install -P coverage-per-test sonar:sonar [<optional_analysis_properties>]
+```
 
-Result
-======
-The build command will create a project named "Training: Coverage and Size Metrics" where you can witness the resulting size metrics
+## Result
+
+The build command will create a project named **Training: Size Metrics** where you can witness the resulting size metrics
