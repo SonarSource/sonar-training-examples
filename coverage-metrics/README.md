@@ -11,7 +11,7 @@ The test file contains one UT without any assert statement which is bad practice
 
 - Run `build.sh 1 [<optional_analysis_properties>]` to build and analyze the project with one unit test (UT1) that will give partial coverage
 - Run `build.sh 2 [<optional_analysis_properties>]` to build and analyze the project with one unit test (UT2) that will give another partial coverage
-- Run `build.sh both [<optional_analysis_properties>]` to build and analyze the project with both UT (UT1 and UT2) that will yield 100% coverage
+- Run `build.sh all [<optional_analysis_properties>]` to build and analyze the project with both UT (UT1 and UT2) that will yield 100% coverage
 
 The `build.sh` script uses different tests files depeding on the parameter (1, 2 or both)
 and then runs:
