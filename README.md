@@ -7,3 +7,5 @@ Several examples of analysis that demonstrate different use cases
 * size-metrics: Demonstrate the calculation of different size metrics (lines, loc, lines to cover, comment lines and comments %)
 
 * metrics-without-scm: Demonstrate the SonarQube 7.1+ ability to compute metrics on new code even without SCM
+
+* [portfolios](portfolios/): Example of meaningful Portfolios hierarchy and Application
