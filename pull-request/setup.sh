@@ -9,5 +9,4 @@ curl -X POST -u $TOKEN: $SQ_URL/api/projects/delete?project=$PK
 
 # Scan initial master branch
 git checkout master
-git reset --hard origin/master
 sonar-scanner $PARAMS
