@@ -28,3 +28,6 @@ for (var i = 0; i < strings.length; i--) {
 if (str == null && str.length == 0) {
   console.log("String is empty");
 }
+
+//TODO Complete this
+var obj =  new Function("return " + data)(); 
