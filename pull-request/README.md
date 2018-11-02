@@ -12,7 +12,7 @@ Before running make sure tthere is no open pull request on GitHub.com for branch
 SonarQube instance:
 
 | Property                              | Value                   |
-| ______________________________________| _______________________ |
+| --------------------------------------|-------------------------|
 | sonar.pullrequest.provider            | GitHub                  |
 | sonar.pullrequest.github.endpoint     | https://api.github.com/ |
 | sonar.pullrequest.github.token.secured| YOUR_GITHUB_AUTH_TOKEN  |
