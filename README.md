@@ -14,6 +14,8 @@ Several examples of analysis that demonstrate different use cases
 
 * [branches](branches/): Demonstrates the SonarQube 6.7+ new branch management system, and to compare results with 5.6- old branch management.
 
+* [portfolios](portfolios/): Example of meaningful Portfolios hierarchy and Application
+
 * [file-renaming](file-renaming/): Demonstrate the SonarQube 6.7+ issue tracking preservation (and new code preservation) in case of file renaming or file move.
 
 * [security](security/): Example of (7.3+) Vulnerabilities and Security Hotspots.

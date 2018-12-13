@@ -1,3 +1,10 @@
 .scannerwork/
 .sonar/
 .sonarlint/
+.sonartmp/
+.project
+.settings/
+.classpath
+target/
+build/
+*.swp
