@@ -1,0 +1,102 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.sonarsource.parent</groupId>
+    <artifactId>parent</artifactId>
+    <version>41</version>
+  </parent>
+
+  <groupId>org.sonarsource.ldap</groupId>
+  <artifactId>sonar-ldap</artifactId>
+  <version>2.2-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>SonarQube LDAP</name>
+  <description>Delegates authentication to LDAP</description>
+  <url>http://redirect.sonarsource.com/plugins/ldap.html</url>
+  <inceptionYear>2009</inceptionYear>
+  <organization>
+    <name>SonarSource</name>
+    <url>https://www.sonarsource.com</url>
+  </organization>
+  <licenses>
+    <license>
+      <name>GNU LGPL 3</name>
+      <url>http://www.gnu.org/licenses/lgpl.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>godin</id>
+      <name>Evgeny Mandrikov</name>
+      <timezone>+3</timezone>
+    </developer>
+    <developer>
+      <id>sulabh-msft</id>
+      <name>Sulabh Upadhyay</name>
+      <organization>Microsoft</organization>
+    </developer>
+  </developers>
+  <contributors>
+    <contributor>
+      <name>Henri Gomez</name>
+      <timezone>+1</timezone>
+    </contributor>
+  </contributors>
+  <scm>
+    <connection>scm:git:git@github.com:SonarSource/sonar-ldap.git</connection>
+    <developerConnection>scm:git:git@github.com:SonarSource/sonar-ldap.git</developerConnection>
+    <url>https://github.com/SonarSource/sonar-ldap</url>
+    <tag>HEAD</tag>
+  </scm>
+  <issueManagement>
+    <system>JIRA</system>
+    <url>http://jira.sonarsource.com/browse/LDAP</url>
+  </issueManagement>
+  <ciManagement>
+    <system>Travis</system>
+    <url>https://travis-ci.org/SonarSource/sonar-ldap</url>
+  </ciManagement>
+
+  <properties>
+    <sonar.buildVersion>5.6</sonar.buildVersion>
+    <version.org.apache.directory.server>2.0.0-M24</version.org.apache.directory.server>
+
+    <gitRepositoryName>sonar-ldap</gitRepositoryName>
+    <!-- Release: enable publication to Bintray -->
+    <artifactsToPublish>${project.groupId}:sonar-ldap-plugin:jar</artifactsToPublish>
+  </properties>
+
+  <modules>
+    <module>server</module>
+    <module>sonar-ldap-plugin</module>
+  </modules>
+
+  <profiles>
+    <profile>
+      <id>its</id>
+      <modules>
+        <module>it</module>
+      </modules>
+    </profile>
+  </profiles>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>server</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.assertj</groupId>
+        <artifactId>assertj-core</artifactId>
+        <version>3.4.1</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+</project>
