@@ -10,7 +10,7 @@ fi
 
 echo "Deleting project"
 
-curl -X POST -u $TOKEN: $SQ_URL/api/projects/delete?project=$PK
+curl -X POST -u $sqHostOpt $sqLoginOpt $SQ_URL/api/projects/delete?project=$PK
 
 echo "Creating project"
-mvn clean verify sonar:sonar
+mvn clean verify sonar:sonar $sqHostOpt $sqLoginOpt
