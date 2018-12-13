@@ -11,12 +11,12 @@ echo "--------------------------------------------------------"
 for p in `ls | grep -e tier -e bank -e insurance | grep -v $me`; do
    echo "Scanning $p..."
 	cd $p; ./build.sh 1>>build.log 2>&1; cd ..;
-	if [ -f "$p/sonar-project.properties" ]; then
+	if [ -f "$p/sonar-project.properties" ]; then
       # We extract the key from sonar-project.properties
 		pk=`grep sonar.projectKey $p/sonar-project.properties | cut -d '=' -f 2`
    else
       # We extract the key from the static mapping table
 		pk=`echo $KEYS | grep $ | cut -d '=' -f 2`
 	fi
-	curl -X POST -u $TOKEN: $SQ_URL/api/project_tags/set?project=pk&tag=superbank.com
+	curl -X POST -u $TOKEN: "$SQ_URL/api/project_tags/set?project=$pk&tags=superbank.com"
 done
