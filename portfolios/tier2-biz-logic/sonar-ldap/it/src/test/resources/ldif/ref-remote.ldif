@@ -1,0 +1,27 @@
+#
+# For samples see http://www.zytrax.com/books/ldap/ch5/step2.html
+#
+
+dn: dc=sonarsource,dc=com
+dc: sonarsource
+objectClass: domain
+description: The best company in the whole world
+#
+# USERS
+#
+
+dn: ou=people,dc=sonarsource,dc=com
+ou: users
+objectClass: organizationalUnit
+description: All people in organization
+
+dn: cn=Evgeny Mandrikov,ou=people,dc=sonarsource,dc=com
+cn: Evgeny Mandrikov
+objectClass: inetOrgPerson
+objectclass: extensibleObject
+givenname: Evgeny
+sn: Mandrikov
+mail: test@example.org
+uid: godin
+userpassword: 12345
+

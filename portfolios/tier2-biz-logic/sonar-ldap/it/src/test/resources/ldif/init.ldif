@@ -1,0 +1,34 @@
+#
+# For samples see http://www.zytrax.com/books/ldap/ch5/step2.html
+#
+
+dn: dc=sonarsource,dc=com
+dc: sonarsource
+objectClass: domain
+description: The best company in the whole world
+
+#
+# USERS
+#
+
+dn: ou=people,dc=sonarsource,dc=com
+ou: users
+objectClass: organizationalUnit
+description: All people in organization
+
+dn: cn=bind,ou=people,dc=sonarsource,dc=com
+cn: bind
+objectClass: organizationalRole
+objectClass: uidObject
+objectClass: simpleSecurityObject
+uid: sonar
+userpassword: bindpassword
+
+#
+# GROUPS
+#
+
+dn: ou=groups,dc=sonarsource,dc=com
+ou: groups
+objectclass: organizationalunit
+description: All groups in organization

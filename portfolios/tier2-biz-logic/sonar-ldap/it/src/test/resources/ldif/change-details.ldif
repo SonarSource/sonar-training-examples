@@ -1,0 +1,15 @@
+# Modify email
+
+dn: cn=Evgeny Mandrikov,ou=people,dc=sonarsource,dc=com
+changetype: modify
+replace: mail
+mail: evgeny.mandrikov@sonarsource.com
+-
+
+# Remove from group sonar-administrators
+
+dn: cn=sonar-administrators,ou=groups,dc=sonarsource,dc=com
+changetype: modify
+delete: uniqueMember
+uniqueMember: cn=Evgeny Mandrikov,ou=people,dc=sonarsource,dc=com
+-

@@ -1,0 +1,32 @@
+# Add new user
+
+dn: cn=Evgeny Mandrikov,ou=people,dc=sonarsource,dc=com
+cn: Evgeny Mandrikov
+objectClass: inetOrgPerson
+givenname: Evgeny
+sn: Mandrikov
+mail: test@example.org
+uid: godin
+userpassword: 12345
+
+# Add to group sonar-users
+
+dn: cn=sonar-users,ou=groups,dc=sonarsource,dc=com
+cn: sonar-users
+objectclass: groupOfUniqueNames
+uniqueMember: cn=Evgeny Mandrikov,ou=people,dc=sonarsource,dc=com
+
+# Add to group sonar-administrators
+
+dn: cn=sonar-administrators,ou=groups,dc=sonarsource,dc=com
+cn: sonar-administrators
+objectclass: groupOfUniqueNames
+uniqueMember: cn=Evgeny Mandrikov,ou=people,dc=sonarsource,dc=com
+uniqueMember: cn=bind,ou=people,dc=sonarsource,dc=com
+
+# Add to group sonar-developers (no such group in Sonar)
+
+dn: cn=sonar-developers,ou=groups,dc=sonarsource,dc=com
+cn: sonar-developers
+objectclass: groupOfUniqueNames
+uniqueMember: cn=Evgeny Mandrikov,ou=people,dc=sonarsource,dc=com

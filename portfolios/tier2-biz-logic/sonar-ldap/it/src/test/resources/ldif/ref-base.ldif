@@ -1,0 +1,24 @@
+#
+# For samples see http://www.zytrax.com/books/ldap/ch5/step2.html
+#
+
+dn: dc=sonarsource,dc=com
+dc: sonarsource
+objectClass: domain
+description: The best company in the whole world
+
+#
+# USERS
+#
+
+dn: ou=people,dc=sonarsource,dc=com
+ou: users
+objectClass: extensibleObject
+objectClass: referral
+ref: ldap://localhost:1026/ou=people,dc=sonarsource,dc=com
+
+
+
+
+
+

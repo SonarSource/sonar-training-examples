@@ -1,0 +1,31 @@
+version: "2"
+
+services:
+  sonarqube-server:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.sonarqube
+    networks:
+      - sonarqube-network
+    ports:
+      - "9000:9000"
+    environment:
+      - SONARQUBE_WEB_JVM_OPTS=-Djavax.net.ssl.keyStore=/root/keystore -Djavax.net.ssl.keyStorePassword=changeit
+
+  ldap-server:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.ldap
+    networks:
+      - sonarqube-network
+    environment:
+      - HOSTNAME=ldap-server
+      - LDAP_TLS_CRT_FILENAME=my-cert.crt
+      - LDAP_TLS_KEY_FILENAME=my-cert.key
+      - LDAP_TLS_CA_CRT_FILENAME=my-ca.crt
+      - LDAP_TLS_ENFORCE=true
+      - LDAP_TLS_VERIFY_CLIENT=demand
+
+networks:
+  sonarqube-network:
+    driver: bridge

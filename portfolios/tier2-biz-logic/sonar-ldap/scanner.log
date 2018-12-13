@@ -1,0 +1,516 @@
+Apache Maven 3.3.3 (7994120775791599e205a5524ec3e0dfe41d4a06; 2015-04-22T13:57:37+02:00)
+Maven home: /Users/Olivier/bin/apache-maven-3.3.3
+Java version: 1.8.0_60, vendor: Oracle Corporation
+Java home: /Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "mac os x", version: "10.13.5", arch: "x86_64", family: "mac"
+[DEBUG] Created new class realm maven.api
+[DEBUG] Importing foreign packages into class realm maven.api
+[DEBUG]   Imported: javax.enterprise.inject.* < plexus.core
+[DEBUG]   Imported: javax.enterprise.util.* < plexus.core
+[DEBUG]   Imported: javax.inject.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.artifact < plexus.core
+[DEBUG]   Imported: org.apache.maven.classrealm < plexus.core
+[DEBUG]   Imported: org.apache.maven.cli < plexus.core
+[DEBUG]   Imported: org.apache.maven.configuration < plexus.core
+[DEBUG]   Imported: org.apache.maven.exception < plexus.core
+[DEBUG]   Imported: org.apache.maven.execution < plexus.core
+[DEBUG]   Imported: org.apache.maven.execution.scope < plexus.core
+[DEBUG]   Imported: org.apache.maven.lifecycle < plexus.core
+[DEBUG]   Imported: org.apache.maven.model < plexus.core
+[DEBUG]   Imported: org.apache.maven.monitor < plexus.core
+[DEBUG]   Imported: org.apache.maven.plugin < plexus.core
+[DEBUG]   Imported: org.apache.maven.profiles < plexus.core
+[DEBUG]   Imported: org.apache.maven.project < plexus.core
+[DEBUG]   Imported: org.apache.maven.reporting < plexus.core
+[DEBUG]   Imported: org.apache.maven.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.rtinfo < plexus.core
+[DEBUG]   Imported: org.apache.maven.settings < plexus.core
+[DEBUG]   Imported: org.apache.maven.toolchain < plexus.core
+[DEBUG]   Imported: org.apache.maven.usability < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authentication < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authorization < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.events < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.observers < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.proxy < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.resource < plexus.core
+[DEBUG]   Imported: org.codehaus.classworlds < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.* < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.classworlds < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.component < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.configuration < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.container < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.context < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.lifecycle < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.logging < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.personality < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.Xpp3Dom < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParser < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParserException < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlSerializer < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.* < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.artifact < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.collection < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.deployment < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.graph < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.impl < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.installation < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.internal.impl < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.metadata < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.repository < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.resolution < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.spi < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.transfer < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.version < plexus.core
+[DEBUG]   Imported: org.slf4j.* < plexus.core
+[DEBUG]   Imported: org.slf4j.spi.* < plexus.core
+[DEBUG] Populating class realm maven.api
+[INFO] Error stacktraces are turned on.
+[DEBUG] Reading global settings from /Users/Olivier/bin/apache-maven-3.3.3/conf/settings.xml
+[DEBUG] Reading user settings from /Users/Olivier/.m2/settings.xml
+[DEBUG] Reading global toolchains from /Users/Olivier/bin/apache-maven-3.3.3/conf/toolchains.xml
+[DEBUG] Reading user toolchains from /Users/Olivier/.m2/toolchains.xml
+[DEBUG] Using local repository at /Users/Olivier/.m2/repository
+[DEBUG] Using manager EnhancedLocalRepositoryManager with priority 10.0 for /Users/Olivier/.m2/repository
+[INFO] Scanning for projects...
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=0, ConflictMarker.markTime=1, ConflictMarker.nodeCount=9, ConflictIdSorter.graphTime=0, ConflictIdSorter.topsortTime=0, ConflictIdSorter.conflictIdCount=8, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=3, ConflictResolver.conflictItemCount=9, DefaultDependencyCollector.collectTime=27, DefaultDependencyCollector.transformTime=6}
+[DEBUG] org.apache.maven.wagon:wagon-webdav:jar:1.0-beta-2:
+[DEBUG]    slide:slide-webdavlib:jar:2.1:compile
+[DEBUG]       commons-httpclient:commons-httpclient:jar:2.0.2:compile
+[DEBUG]       jdom:jdom:jar:1.0:compile
+[DEBUG]       de.zeigermann.xml:xml-im-exporter:jar:1.1:compile
+[DEBUG]    commons-logging:commons-logging:jar:1.0.4:runtime
+[DEBUG]    org.apache.maven.wagon:wagon-provider-api:jar:1.0-beta-2:compile
+[DEBUG]       org.codehaus.plexus:plexus-utils:jar:1.0.4:compile
+[DEBUG] Created new class realm extension>org.apache.maven.wagon:wagon-webdav:1.0-beta-2
+[DEBUG] Importing foreign packages into class realm extension>org.apache.maven.wagon:wagon-webdav:1.0-beta-2
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm extension>org.apache.maven.wagon:wagon-webdav:1.0-beta-2
+[DEBUG]   Included: org.apache.maven.wagon:wagon-webdav:jar:1.0-beta-2
+[DEBUG]   Included: slide:slide-webdavlib:jar:2.1
+[DEBUG]   Included: commons-httpclient:commons-httpclient:jar:2.0.2
+[DEBUG]   Included: jdom:jdom:jar:1.0
+[DEBUG]   Included: de.zeigermann.xml:xml-im-exporter:jar:1.1
+[DEBUG]   Included: commons-logging:commons-logging:jar:1.0.4
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:1.0.4
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=1, ConflictMarker.markTime=0, ConflictMarker.nodeCount=97, ConflictIdSorter.graphTime=0, ConflictIdSorter.topsortTime=0, ConflictIdSorter.conflictIdCount=33, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=3, ConflictResolver.conflictItemCount=71, DefaultDependencyCollector.collectTime=154, DefaultDependencyCollector.transformTime=4}
+[DEBUG] org.sonarsource.sonar-packaging-maven-plugin:sonar-packaging-maven-plugin:jar:1.18.0.372:
+[DEBUG]    commons-lang:commons-lang:jar:2.6:compile
+[DEBUG]    com.google.guava:guava:jar:18.0:compile
+[DEBUG]    org.apache.maven:maven-archiver:jar:2.5:compile
+[DEBUG]       org.apache.maven:maven-artifact:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-model:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-core:jar:2.0.6:compile
+[DEBUG]          org.apache.maven:maven-settings:jar:2.0.6:compile
+[DEBUG]          org.apache.maven:maven-plugin-parameter-documenter:jar:2.0.6:compile
+[DEBUG]          org.apache.maven.reporting:maven-reporting-api:jar:2.0.6:compile
+[DEBUG]             org.apache.maven.doxia:doxia-sink-api:jar:1.0-alpha-7:compile
+[DEBUG]          org.apache.maven:maven-profile:jar:2.0.6:compile
+[DEBUG]          org.codehaus.plexus:plexus-container-default:jar:1.0-alpha-9-stable-1:compile
+[DEBUG]             junit:junit:jar:3.8.1:compile
+[DEBUG]          org.apache.maven:maven-repository-metadata:jar:2.0.6:compile
+[DEBUG]          org.apache.maven:maven-error-diagnostics:jar:2.0.6:compile
+[DEBUG]          commons-cli:commons-cli:jar:1.0:compile
+[DEBUG]          org.apache.maven:maven-plugin-api:jar:2.0.6:compile
+[DEBUG]          org.apache.maven:maven-plugin-descriptor:jar:2.0.6:compile
+[DEBUG]          org.codehaus.plexus:plexus-interactivity-api:jar:1.0-alpha-4:compile
+[DEBUG]          org.apache.maven:maven-artifact-manager:jar:2.0.6:compile
+[DEBUG]          org.apache.maven:maven-monitor:jar:2.0.6:compile
+[DEBUG]          classworlds:classworlds:jar:1.1:compile
+[DEBUG]       org.codehaus.plexus:plexus-archiver:jar:2.1:compile
+[DEBUG]          org.codehaus.plexus:plexus-io:jar:2.0.2:compile
+[DEBUG]       org.codehaus.plexus:plexus-utils:jar:3.0:compile
+[DEBUG]       org.codehaus.plexus:plexus-interpolation:jar:1.15:compile
+[DEBUG]    org.apache.maven.shared:maven-dependency-tree:jar:2.1:compile
+[DEBUG]       org.apache.maven:maven-project:jar:2.2.0:compile
+[DEBUG]          org.apache.maven:maven-plugin-registry:jar:2.2.0:compile
+[DEBUG]       org.codehaus.plexus:plexus-component-annotations:jar:1.5.5:compile
+[DEBUG]       org.eclipse.aether:aether-util:jar:0.9.0.M2:compile
+[DEBUG] Created new class realm extension>org.sonarsource.sonar-packaging-maven-plugin:sonar-packaging-maven-plugin:1.18.0.372
+[DEBUG] Importing foreign packages into class realm extension>org.sonarsource.sonar-packaging-maven-plugin:sonar-packaging-maven-plugin:1.18.0.372
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm extension>org.sonarsource.sonar-packaging-maven-plugin:sonar-packaging-maven-plugin:1.18.0.372
+[DEBUG]   Included: org.sonarsource.sonar-packaging-maven-plugin:sonar-packaging-maven-plugin:jar:1.18.0.372
+[DEBUG]   Included: commons-lang:commons-lang:jar:2.6
+[DEBUG]   Included: com.google.guava:guava:jar:18.0
+[DEBUG]   Included: org.apache.maven:maven-archiver:jar:2.5
+[DEBUG]   Included: org.apache.maven.reporting:maven-reporting-api:jar:2.0.6
+[DEBUG]   Included: org.apache.maven.doxia:doxia-sink-api:jar:1.0-alpha-7
+[DEBUG]   Included: junit:junit:jar:3.8.1
+[DEBUG]   Included: commons-cli:commons-cli:jar:1.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-interactivity-api:jar:1.0-alpha-4
+[DEBUG]   Included: org.codehaus.plexus:plexus-archiver:jar:2.1
+[DEBUG]   Included: org.codehaus.plexus:plexus-io:jar:2.0.2
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:3.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-interpolation:jar:1.15
+[DEBUG]   Included: org.apache.maven.shared:maven-dependency-tree:jar:2.1
+[DEBUG]   Included: org.codehaus.plexus:plexus-component-annotations:jar:1.5.5
+[DEBUG]   Included: org.eclipse.aether:aether-util:jar:0.9.0.M2
+[DEBUG] Extension realms for project org.sonarsource.ldap:sonar-ldap:pom:2.2-SNAPSHOT: [ClassRealm[extension>org.apache.maven.wagon:wagon-webdav:1.0-beta-2, parent: sun.misc.Launcher$AppClassLoader@33909752], ClassRealm[extension>org.sonarsource.sonar-packaging-maven-plugin:sonar-packaging-maven-plugin:1.18.0.372, parent: sun.misc.Launcher$AppClassLoader@33909752]]
+[DEBUG] Created new class realm project>org.sonarsource.ldap:sonar-ldap:2.2-SNAPSHOT
+[DEBUG] Populating class realm project>org.sonarsource.ldap:sonar-ldap:2.2-SNAPSHOT
+[DEBUG] Looking up lifecyle mappings for packaging pom from ClassRealm[project>org.sonarsource.ldap:sonar-ldap:2.2-SNAPSHOT, parent: ClassRealm[maven.api, parent: null]]
+[DEBUG] Extension realms for project org.sonarsource.parent:parent:pom:40: [ClassRealm[extension>org.apache.maven.wagon:wagon-webdav:1.0-beta-2, parent: sun.misc.Launcher$AppClassLoader@33909752], ClassRealm[extension>org.sonarsource.sonar-packaging-maven-plugin:sonar-packaging-maven-plugin:1.18.0.372, parent: sun.misc.Launcher$AppClassLoader@33909752]]
+[DEBUG] Looking up lifecyle mappings for packaging pom from ClassRealm[project>org.sonarsource.ldap:sonar-ldap:2.2-SNAPSHOT, parent: ClassRealm[maven.api, parent: null]]
+[DEBUG] Extension realms for project org.sonarsource.ldap:server:jar:2.2-SNAPSHOT: [ClassRealm[extension>org.apache.maven.wagon:wagon-webdav:1.0-beta-2, parent: sun.misc.Launcher$AppClassLoader@33909752], ClassRealm[extension>org.sonarsource.sonar-packaging-maven-plugin:sonar-packaging-maven-plugin:1.18.0.372, parent: sun.misc.Launcher$AppClassLoader@33909752]]
+[DEBUG] Looking up lifecyle mappings for packaging jar from ClassRealm[project>org.sonarsource.ldap:sonar-ldap:2.2-SNAPSHOT, parent: ClassRealm[maven.api, parent: null]]
+[DEBUG] Extension realms for project org.sonarsource.ldap:sonar-ldap-plugin:sonar-plugin:2.2-SNAPSHOT: [ClassRealm[extension>org.apache.maven.wagon:wagon-webdav:1.0-beta-2, parent: sun.misc.Launcher$AppClassLoader@33909752], ClassRealm[extension>org.sonarsource.sonar-packaging-maven-plugin:sonar-packaging-maven-plugin:1.18.0.372, parent: sun.misc.Launcher$AppClassLoader@33909752]]
+[DEBUG] Looking up lifecyle mappings for packaging sonar-plugin from ClassRealm[project>org.sonarsource.ldap:sonar-ldap:2.2-SNAPSHOT, parent: ClassRealm[maven.api, parent: null]]
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] SonarQube LDAP
+[INFO] SonarQube LDAP Test Server
+[INFO] SonarQube LDAP Plugin
+[DEBUG] Resolving plugin prefix sonar from [org.apache.maven.plugins, org.codehaus.mojo]
+[DEBUG] Could not find metadata org.apache.maven.plugins/maven-metadata.xml in local (/Users/Olivier/.m2/repository)
+[DEBUG] Skipped remote request for org.apache.maven.plugins/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] Skipped remote request for org.apache.maven.plugins/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] Skipped remote request for org.apache.maven.plugins/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] Could not find metadata org.codehaus.mojo/maven-metadata.xml in local (/Users/Olivier/.m2/repository)
+[DEBUG] Skipped remote request for org.codehaus.mojo/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] Skipped remote request for org.codehaus.mojo/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] Skipped remote request for org.codehaus.mojo/maven-metadata.xml, locally cached metadata up-to-date.
+[WARNING] The metadata /Users/Olivier/.m2/repository/org/apache/maven/plugins/maven-metadata-sonarsource.com.xml is invalid: entity reference name can not contain character =' (position: START_TAG seen ...= "http://login.netinary.net/detect.php?called_by=index&nyretries=... @15:101) 
+org.apache.maven.artifact.repository.metadata.io.MetadataParseException: entity reference name can not contain character =' (position: START_TAG seen ...= "http://login.netinary.net/detect.php?called_by=index&nyretries=... @15:101) 
+	at org.apache.maven.artifact.repository.metadata.io.DefaultMetadataReader.read(DefaultMetadataReader.java:73)
+	at org.apache.maven.artifact.repository.metadata.io.DefaultMetadataReader.read(DefaultMetadataReader.java:53)
+	at org.apache.maven.plugin.prefix.internal.DefaultPluginPrefixResolver.resolveFromRepository(DefaultPluginPrefixResolver.java:254)
+	at org.apache.maven.plugin.prefix.internal.DefaultPluginPrefixResolver.processResults(DefaultPluginPrefixResolver.java:225)
+	at org.apache.maven.plugin.prefix.internal.DefaultPluginPrefixResolver.resolveFromRepository(DefaultPluginPrefixResolver.java:187)
+	at org.apache.maven.plugin.prefix.internal.DefaultPluginPrefixResolver.resolve(DefaultPluginPrefixResolver.java:89)
+	at org.apache.maven.lifecycle.internal.MojoDescriptorCreator.findPluginForPrefix(MojoDescriptorCreator.java:266)
+	at org.apache.maven.lifecycle.internal.MojoDescriptorCreator.getMojoDescriptor(MojoDescriptorCreator.java:220)
+	at org.apache.maven.lifecycle.internal.DefaultLifecycleTaskSegmentCalculator.calculateTaskSegments(DefaultLifecycleTaskSegmentCalculator.java:103)
+	at org.apache.maven.lifecycle.internal.DefaultLifecycleTaskSegmentCalculator.calculateTaskSegments(DefaultLifecycleTaskSegmentCalculator.java:83)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:89)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:862)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:286)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:197)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: entity reference name can not contain character =' (position: START_TAG seen ...= "http://login.netinary.net/detect.php?called_by=index&nyretries=... @15:101) 
+	at org.codehaus.plexus.util.xml.pull.MXParser.parseEntityRef(MXParser.java:2277)
+	at org.codehaus.plexus.util.xml.pull.MXParser.nextImpl(MXParser.java:1313)
+	at org.codehaus.plexus.util.xml.pull.MXParser.next(MXParser.java:1131)
+	at org.apache.maven.artifact.repository.metadata.io.xpp3.MetadataXpp3Reader.checkUnknownElement(MetadataXpp3Reader.java:119)
+	at org.apache.maven.artifact.repository.metadata.io.xpp3.MetadataXpp3Reader.parseMetadata(MetadataXpp3Reader.java:638)
+	at org.apache.maven.artifact.repository.metadata.io.xpp3.MetadataXpp3Reader.read(MetadataXpp3Reader.java:909)
+	at org.apache.maven.artifact.repository.metadata.io.xpp3.MetadataXpp3Reader.read(MetadataXpp3Reader.java:519)
+	at org.apache.maven.artifact.repository.metadata.io.DefaultMetadataReader.read(DefaultMetadataReader.java:69)
+	... 24 more
+[DEBUG] Resolved plugin prefix sonar to org.codehaus.mojo:sonar-maven-plugin from repository repo.jenkins-ci.org
+[DEBUG] Resolving plugin version for org.codehaus.mojo:sonar-maven-plugin
+[DEBUG] Could not find metadata org.codehaus.mojo:sonar-maven-plugin/maven-metadata.xml in local (/Users/Olivier/.m2/repository)
+[DEBUG] Skipped remote request for org.codehaus.mojo:sonar-maven-plugin/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] Skipped remote request for org.codehaus.mojo:sonar-maven-plugin/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] Skipped remote request for org.codehaus.mojo:sonar-maven-plugin/maven-metadata.xml, locally cached metadata up-to-date.
+[WARNING] The metadata /Users/Olivier/.m2/repository/org/codehaus/mojo/sonar-maven-plugin/maven-metadata-sonarsource.com.xml is invalid: entity reference name can not contain character =' (position: START_TAG seen ...= "http://login.netinary.net/detect.php?called_by=index&nyretries=... @15:101) 
+org.apache.maven.artifact.repository.metadata.io.MetadataParseException: entity reference name can not contain character =' (position: START_TAG seen ...= "http://login.netinary.net/detect.php?called_by=index&nyretries=... @15:101) 
+	at org.apache.maven.artifact.repository.metadata.io.DefaultMetadataReader.read(DefaultMetadataReader.java:73)
+	at org.apache.maven.artifact.repository.metadata.io.DefaultMetadataReader.read(DefaultMetadataReader.java:53)
+	at org.apache.maven.plugin.version.internal.DefaultPluginVersionResolver.mergeMetadata(DefaultPluginVersionResolver.java:290)
+	at org.apache.maven.plugin.version.internal.DefaultPluginVersionResolver.resolveFromRepository(DefaultPluginVersionResolver.java:145)
+	at org.apache.maven.plugin.version.internal.DefaultPluginVersionResolver.resolve(DefaultPluginVersionResolver.java:96)
+	at org.apache.maven.lifecycle.internal.MojoDescriptorCreator.resolvePluginVersion(MojoDescriptorCreator.java:281)
+	at org.apache.maven.lifecycle.internal.MojoDescriptorCreator.getMojoDescriptor(MojoDescriptorCreator.java:236)
+	at org.apache.maven.lifecycle.internal.DefaultLifecycleTaskSegmentCalculator.calculateTaskSegments(DefaultLifecycleTaskSegmentCalculator.java:103)
+	at org.apache.maven.lifecycle.internal.DefaultLifecycleTaskSegmentCalculator.calculateTaskSegments(DefaultLifecycleTaskSegmentCalculator.java:83)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:89)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:862)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:286)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:197)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: entity reference name can not contain character =' (position: START_TAG seen ...= "http://login.netinary.net/detect.php?called_by=index&nyretries=... @15:101) 
+	at org.codehaus.plexus.util.xml.pull.MXParser.parseEntityRef(MXParser.java:2277)
+	at org.codehaus.plexus.util.xml.pull.MXParser.nextImpl(MXParser.java:1313)
+	at org.codehaus.plexus.util.xml.pull.MXParser.next(MXParser.java:1131)
+	at org.apache.maven.artifact.repository.metadata.io.xpp3.MetadataXpp3Reader.checkUnknownElement(MetadataXpp3Reader.java:119)
+	at org.apache.maven.artifact.repository.metadata.io.xpp3.MetadataXpp3Reader.parseMetadata(MetadataXpp3Reader.java:638)
+	at org.apache.maven.artifact.repository.metadata.io.xpp3.MetadataXpp3Reader.read(MetadataXpp3Reader.java:909)
+	at org.apache.maven.artifact.repository.metadata.io.xpp3.MetadataXpp3Reader.read(MetadataXpp3Reader.java:519)
+	at org.apache.maven.artifact.repository.metadata.io.DefaultMetadataReader.read(DefaultMetadataReader.java:69)
+	... 23 more
+[DEBUG] Resolved plugin version for org.codehaus.mojo:sonar-maven-plugin to 3.4.0.905 from repository repo.jenkins-ci.org (http://repo.jenkins-ci.org/public/, default, releases+snapshots)
+[DEBUG] === REACTOR BUILD PLAN ================================================
+[DEBUG] Project: org.sonarsource.ldap:sonar-ldap:pom:2.2-SNAPSHOT
+[DEBUG] Tasks:   [sonar:sonar]
+[DEBUG] Style:   Aggregating
+[DEBUG] =======================================================================
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building SonarQube LDAP 2.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[DEBUG] Resolving plugin prefix sonar from [org.apache.maven.plugins, org.codehaus.mojo]
+[DEBUG] Could not find metadata org.apache.maven.plugins/maven-metadata.xml in local (/Users/Olivier/.m2/repository)
+[DEBUG] Skipped remote request for org.apache.maven.plugins/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] Skipped remote request for org.apache.maven.plugins/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] Skipped remote request for org.apache.maven.plugins/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] Could not find metadata org.codehaus.mojo/maven-metadata.xml in local (/Users/Olivier/.m2/repository)
+[DEBUG] Skipped remote request for org.codehaus.mojo/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] Skipped remote request for org.codehaus.mojo/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] Skipped remote request for org.codehaus.mojo/maven-metadata.xml, locally cached metadata up-to-date.
+[WARNING] The metadata /Users/Olivier/.m2/repository/org/apache/maven/plugins/maven-metadata-sonarsource.com.xml is invalid: entity reference name can not contain character =' (position: START_TAG seen ...= "http://login.netinary.net/detect.php?called_by=index&nyretries=... @15:101) 
+org.apache.maven.artifact.repository.metadata.io.MetadataParseException: entity reference name can not contain character =' (position: START_TAG seen ...= "http://login.netinary.net/detect.php?called_by=index&nyretries=... @15:101) 
+	at org.apache.maven.artifact.repository.metadata.io.DefaultMetadataReader.read(DefaultMetadataReader.java:73)
+	at org.apache.maven.artifact.repository.metadata.io.DefaultMetadataReader.read(DefaultMetadataReader.java:53)
+	at org.apache.maven.plugin.prefix.internal.DefaultPluginPrefixResolver.resolveFromRepository(DefaultPluginPrefixResolver.java:254)
+	at org.apache.maven.plugin.prefix.internal.DefaultPluginPrefixResolver.processResults(DefaultPluginPrefixResolver.java:225)
+	at org.apache.maven.plugin.prefix.internal.DefaultPluginPrefixResolver.resolveFromRepository(DefaultPluginPrefixResolver.java:187)
+	at org.apache.maven.plugin.prefix.internal.DefaultPluginPrefixResolver.resolve(DefaultPluginPrefixResolver.java:89)
+	at org.apache.maven.lifecycle.internal.MojoDescriptorCreator.findPluginForPrefix(MojoDescriptorCreator.java:266)
+	at org.apache.maven.lifecycle.internal.MojoDescriptorCreator.getMojoDescriptor(MojoDescriptorCreator.java:220)
+	at org.apache.maven.lifecycle.internal.DefaultLifecycleExecutionPlanCalculator.calculateMojoExecutions(DefaultLifecycleExecutionPlanCalculator.java:206)
+	at org.apache.maven.lifecycle.internal.DefaultLifecycleExecutionPlanCalculator.calculateExecutionPlan(DefaultLifecycleExecutionPlanCalculator.java:127)
+	at org.apache.maven.lifecycle.internal.DefaultLifecycleExecutionPlanCalculator.calculateExecutionPlan(DefaultLifecycleExecutionPlanCalculator.java:145)
+	at org.apache.maven.lifecycle.internal.builder.BuilderCommon.resolveBuildPlan(BuilderCommon.java:96)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:109)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:862)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:286)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:197)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: entity reference name can not contain character =' (position: START_TAG seen ...= "http://login.netinary.net/detect.php?called_by=index&nyretries=... @15:101) 
+	at org.codehaus.plexus.util.xml.pull.MXParser.parseEntityRef(MXParser.java:2277)
+	at org.codehaus.plexus.util.xml.pull.MXParser.nextImpl(MXParser.java:1313)
+	at org.codehaus.plexus.util.xml.pull.MXParser.next(MXParser.java:1131)
+	at org.apache.maven.artifact.repository.metadata.io.xpp3.MetadataXpp3Reader.checkUnknownElement(MetadataXpp3Reader.java:119)
+	at org.apache.maven.artifact.repository.metadata.io.xpp3.MetadataXpp3Reader.parseMetadata(MetadataXpp3Reader.java:638)
+	at org.apache.maven.artifact.repository.metadata.io.xpp3.MetadataXpp3Reader.read(MetadataXpp3Reader.java:909)
+	at org.apache.maven.artifact.repository.metadata.io.xpp3.MetadataXpp3Reader.read(MetadataXpp3Reader.java:519)
+	at org.apache.maven.artifact.repository.metadata.io.DefaultMetadataReader.read(DefaultMetadataReader.java:69)
+	... 29 more
+[DEBUG] Resolved plugin prefix sonar to org.codehaus.mojo:sonar-maven-plugin from repository repo.jenkins-ci.org
+[DEBUG] Resolving plugin version for org.codehaus.mojo:sonar-maven-plugin
+[DEBUG] Could not find metadata org.codehaus.mojo:sonar-maven-plugin/maven-metadata.xml in local (/Users/Olivier/.m2/repository)
+[DEBUG] Skipped remote request for org.codehaus.mojo:sonar-maven-plugin/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] Skipped remote request for org.codehaus.mojo:sonar-maven-plugin/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] Skipped remote request for org.codehaus.mojo:sonar-maven-plugin/maven-metadata.xml, locally cached metadata up-to-date.
+[WARNING] The metadata /Users/Olivier/.m2/repository/org/codehaus/mojo/sonar-maven-plugin/maven-metadata-sonarsource.com.xml is invalid: entity reference name can not contain character =' (position: START_TAG seen ...= "http://login.netinary.net/detect.php?called_by=index&nyretries=... @15:101) 
+org.apache.maven.artifact.repository.metadata.io.MetadataParseException: entity reference name can not contain character =' (position: START_TAG seen ...= "http://login.netinary.net/detect.php?called_by=index&nyretries=... @15:101) 
+	at org.apache.maven.artifact.repository.metadata.io.DefaultMetadataReader.read(DefaultMetadataReader.java:73)
+	at org.apache.maven.artifact.repository.metadata.io.DefaultMetadataReader.read(DefaultMetadataReader.java:53)
+	at org.apache.maven.plugin.version.internal.DefaultPluginVersionResolver.mergeMetadata(DefaultPluginVersionResolver.java:290)
+	at org.apache.maven.plugin.version.internal.DefaultPluginVersionResolver.resolveFromRepository(DefaultPluginVersionResolver.java:145)
+	at org.apache.maven.plugin.version.internal.DefaultPluginVersionResolver.resolve(DefaultPluginVersionResolver.java:96)
+	at org.apache.maven.lifecycle.internal.MojoDescriptorCreator.resolvePluginVersion(MojoDescriptorCreator.java:281)
+	at org.apache.maven.lifecycle.internal.MojoDescriptorCreator.getMojoDescriptor(MojoDescriptorCreator.java:236)
+	at org.apache.maven.lifecycle.internal.DefaultLifecycleExecutionPlanCalculator.calculateMojoExecutions(DefaultLifecycleExecutionPlanCalculator.java:206)
+	at org.apache.maven.lifecycle.internal.DefaultLifecycleExecutionPlanCalculator.calculateExecutionPlan(DefaultLifecycleExecutionPlanCalculator.java:127)
+	at org.apache.maven.lifecycle.internal.DefaultLifecycleExecutionPlanCalculator.calculateExecutionPlan(DefaultLifecycleExecutionPlanCalculator.java:145)
+	at org.apache.maven.lifecycle.internal.builder.BuilderCommon.resolveBuildPlan(BuilderCommon.java:96)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:109)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:862)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:286)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:197)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: entity reference name can not contain character =' (position: START_TAG seen ...= "http://login.netinary.net/detect.php?called_by=index&nyretries=... @15:101) 
+	at org.codehaus.plexus.util.xml.pull.MXParser.parseEntityRef(MXParser.java:2277)
+	at org.codehaus.plexus.util.xml.pull.MXParser.nextImpl(MXParser.java:1313)
+	at org.codehaus.plexus.util.xml.pull.MXParser.next(MXParser.java:1131)
+	at org.apache.maven.artifact.repository.metadata.io.xpp3.MetadataXpp3Reader.checkUnknownElement(MetadataXpp3Reader.java:119)
+	at org.apache.maven.artifact.repository.metadata.io.xpp3.MetadataXpp3Reader.parseMetadata(MetadataXpp3Reader.java:638)
+	at org.apache.maven.artifact.repository.metadata.io.xpp3.MetadataXpp3Reader.read(MetadataXpp3Reader.java:909)
+	at org.apache.maven.artifact.repository.metadata.io.xpp3.MetadataXpp3Reader.read(MetadataXpp3Reader.java:519)
+	at org.apache.maven.artifact.repository.metadata.io.DefaultMetadataReader.read(DefaultMetadataReader.java:69)
+	... 28 more
+[DEBUG] Resolved plugin version for org.codehaus.mojo:sonar-maven-plugin to 3.4.0.905 from repository repo.jenkins-ci.org (http://repo.jenkins-ci.org/public/, default, releases+snapshots)
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] === PROJECT BUILD PLAN ================================================
+[DEBUG] Project:       org.sonarsource.ldap:sonar-ldap:2.2-SNAPSHOT
+[DEBUG] Dependencies (collect): []
+[DEBUG] Dependencies (resolve): [test]
+[DEBUG] Repositories (dependencies): [repo.jenkins-ci.org (http://repo.jenkins-ci.org/public/, default, releases+snapshots), sonarsource.com (http://nexus.internal.sonarsource.com/nexus/content/groups/ss-repo/, default, releases+snapshots), central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] Repositories (plugins)     : [repo.jenkins-ci.org (http://repo.jenkins-ci.org/public/, default, releases+snapshots), sonarsource.com (http://nexus.internal.sonarsource.com/nexus/content/groups/ss-repo/, default, releases+snapshots), central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.sonarsource.scanner.maven:sonar-maven-plugin:3.4.0.905:sonar (default-cli)
+[DEBUG] Style:         Aggregating
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <mojoExecution default-value="${mojoExecution}"/>
+  <session default-value="${session}"/>
+  <skip default-value="false">${sonar.skip}</skip>
+</configuration>
+[DEBUG] =======================================================================
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=0, ConflictMarker.markTime=0, ConflictMarker.nodeCount=1, ConflictIdSorter.graphTime=0, ConflictIdSorter.topsortTime=0, ConflictIdSorter.conflictIdCount=0, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=0, ConflictResolver.conflictItemCount=0, DefaultDependencyCollector.collectTime=0, DefaultDependencyCollector.transformTime=0}
+[DEBUG] org.sonarsource.ldap:sonar-ldap:pom:2.2-SNAPSHOT
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=0, ConflictMarker.markTime=0, ConflictMarker.nodeCount=9, ConflictIdSorter.graphTime=0, ConflictIdSorter.topsortTime=0, ConflictIdSorter.conflictIdCount=6, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=0, ConflictResolver.conflictItemCount=8, DefaultDependencyCollector.collectTime=22, DefaultDependencyCollector.transformTime=0}
+[DEBUG] org.sonarsource.ldap:server:jar:2.2-SNAPSHOT
+[DEBUG]    org.apache.directory.server:apacheds-all:jar:2.0.0-M24:compile
+[DEBUG]    org.slf4j:slf4j-api:jar:1.7.12:compile
+[DEBUG]    junit:junit:jar:4.10:test
+[DEBUG]       org.hamcrest:hamcrest-core:jar:1.1:test
+[DEBUG]    ch.qos.logback:logback-classic:jar:1.1.3:test
+[DEBUG]       ch.qos.logback:logback-core:jar:1.1.3:test
+[DEBUG] Skipped remote request for org.sonarsource.ldap:server:2.2-SNAPSHOT/maven-metadata.xml, locally installed metadata up-to-date.
+[DEBUG] Skipped remote request for org.sonarsource.ldap:server:2.2-SNAPSHOT/maven-metadata.xml, locally installed metadata up-to-date.
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=0, ConflictMarker.markTime=0, ConflictMarker.nodeCount=18, ConflictIdSorter.graphTime=0, ConflictIdSorter.topsortTime=0, ConflictIdSorter.conflictIdCount=15, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=0, ConflictResolver.conflictItemCount=17, DefaultDependencyCollector.collectTime=19, DefaultDependencyCollector.transformTime=0}
+[DEBUG] org.sonarsource.ldap:sonar-ldap-plugin:sonar-plugin:2.2-SNAPSHOT
+[DEBUG]    org.sonarsource.sonarqube:sonar-plugin-api:jar:5.6:provided
+[DEBUG]       org.codehaus.woodstox:woodstox-core-lgpl:jar:4.4.0:provided
+[DEBUG]          javax.xml.stream:stax-api:jar:1.0-2:provided
+[DEBUG]       org.codehaus.woodstox:stax2-api:jar:3.1.4:provided
+[DEBUG]       org.codehaus.staxmate:staxmate:jar:2.0.1:provided
+[DEBUG]    commons-lang:commons-lang:jar:2.6:compile
+[DEBUG]    com.google.code.findbugs:jsr305:jar:3.0.0:provided
+[DEBUG]    org.mockito:mockito-all:jar:1.10.19:test
+[DEBUG]    junit:junit:jar:4.10:test
+[DEBUG]       org.hamcrest:hamcrest-core:jar:1.1:test
+[DEBUG]    org.assertj:assertj-core:jar:3.4.1:test
+[DEBUG]    javax.servlet:javax.servlet-api:jar:3.0.1:test
+[DEBUG]    org.sonarsource.ldap:server:jar:2.2-SNAPSHOT:test
+[DEBUG]       org.apache.directory.server:apacheds-all:jar:2.0.0-M24:test
+[DEBUG]       org.slf4j:slf4j-api:jar:1.7.12:test
+[DEBUG] Skipped remote request for org.sonarsource.ldap:server:2.2-SNAPSHOT/maven-metadata.xml, locally installed metadata up-to-date.
+[DEBUG] Skipped remote request for org.sonarsource.ldap:server:2.2-SNAPSHOT/maven-metadata.xml, locally installed metadata up-to-date.
+[INFO] 
+[INFO] --- sonar-maven-plugin:3.4.0.905:sonar (default-cli) @ sonar-ldap ---
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=1, ConflictMarker.markTime=0, ConflictMarker.nodeCount=7, ConflictIdSorter.graphTime=0, ConflictIdSorter.topsortTime=0, ConflictIdSorter.conflictIdCount=6, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=0, ConflictResolver.conflictItemCount=7, DefaultDependencyCollector.collectTime=12, DefaultDependencyCollector.transformTime=1}
+[DEBUG] org.sonarsource.scanner.maven:sonar-maven-plugin:jar:3.4.0.905:
+[DEBUG]    org.sonatype.plexus:plexus-sec-dispatcher:jar:1.4:compile
+[DEBUG]       org.sonatype.plexus:plexus-cipher:jar:1.4:compile
+[DEBUG]    org.codehaus.plexus:plexus-utils:jar:3.0.22:compile
+[DEBUG]    org.sonarsource.scanner.api:sonar-scanner-api:jar:2.10.0.1189:compile
+[DEBUG]    commons-lang:commons-lang:jar:2.6:compile
+[DEBUG] Created new class realm plugin>org.codehaus.mojo:sonar-maven-plugin:3.4.0.905
+[DEBUG] Importing foreign packages into class realm plugin>org.codehaus.mojo:sonar-maven-plugin:3.4.0.905
+[DEBUG]   Imported:  < project>org.sonarsource.ldap:sonar-ldap:2.2-SNAPSHOT
+[DEBUG] Populating class realm plugin>org.codehaus.mojo:sonar-maven-plugin:3.4.0.905
+[DEBUG]   Included: org.sonarsource.scanner.maven:sonar-maven-plugin:jar:3.4.0.905
+[DEBUG]   Included: org.sonatype.plexus:plexus-sec-dispatcher:jar:1.4
+[DEBUG]   Included: org.sonatype.plexus:plexus-cipher:jar:1.4
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:3.0.22
+[DEBUG]   Included: org.sonarsource.scanner.api:sonar-scanner-api:jar:2.10.0.1189
+[DEBUG]   Included: commons-lang:commons-lang:jar:2.6
+[DEBUG] Configuring mojo org.sonarsource.scanner.maven:sonar-maven-plugin:3.4.0.905:sonar from plugin realm ClassRealm[plugin>org.codehaus.mojo:sonar-maven-plugin:3.4.0.905, parent: sun.misc.Launcher$AppClassLoader@33909752]
+[DEBUG] Configuring mojo 'org.sonarsource.scanner.maven:sonar-maven-plugin:3.4.0.905:sonar' with basic configurator -->
+[DEBUG]   (f) mojoExecution = org.sonarsource.scanner.maven:sonar-maven-plugin:3.4.0.905:sonar {execution: default-cli}
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@3fabf088
+[DEBUG]   (f) skip = false
+[DEBUG] -- end configuration --
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] 16:04:23.562 keyStore is : 
+[DEBUG] 16:04:23.566 keyStore type is : jks
+[DEBUG] 16:04:23.566 keyStore provider is : 
+[DEBUG] 16:04:23.566 init keystore
+[DEBUG] 16:04:23.567 init keymanager of type SunX509
+[DEBUG] 16:04:23.587 Create: /Users/Olivier/.sonar/cache
+[INFO] 16:04:23.590 User cache: /Users/Olivier/.sonar/cache
+[DEBUG] 16:04:23.590 Create: /Users/Olivier/.sonar/cache/_tmp
+[DEBUG] 16:04:23.593 Extract sonar-scanner-api-batch in temp...
+[DEBUG] 16:04:23.599 Get bootstrap index...
+[DEBUG] 16:04:23.600 Download: http://localhost:9674/batch/index
+[DEBUG] 16:04:23.753 Get bootstrap completed
+[DEBUG] 16:04:23.760 Create isolated classloader...
+[DEBUG] 16:04:23.764 Start temp cleaning...
+[DEBUG] 16:04:23.775 Temp cleaning done
+[DEBUG] 16:04:23.775 Execution getVersion
+[INFO] 16:04:23.778 SonarQube version: 6.7.4
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] SonarQube LDAP ..................................... FAILURE [  0.538 s]
+[INFO] SonarQube LDAP Test Server ......................... SKIPPED
+[INFO] SonarQube LDAP Plugin .............................. SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.250 s
+[INFO] Finished at: 2018-06-28T16:04:23+02:00
+[INFO] Final Memory: 18M/289M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.sonarsource.scanner.maven:sonar-maven-plugin:3.4.0.905:sonar (default-cli) on project sonar-ldap: The directory '/Users/Olivier/GitHub/sonar-ldap/server/sonar-ldap-plugin' does not exist for Maven module org.sonarsource.ldap:server:jar:2.2-SNAPSHOT. Please check the property sonar.sources -> [Help 1]
+org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.sonarsource.scanner.maven:sonar-maven-plugin:3.4.0.905:sonar (default-cli) on project sonar-ldap: The directory '/Users/Olivier/GitHub/sonar-ldap/server/sonar-ldap-plugin' does not exist for Maven module org.sonarsource.ldap:server:jar:2.2-SNAPSHOT. Please check the property sonar.sources
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:216)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:862)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:286)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:197)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+Caused by: org.apache.maven.plugin.MojoExecutionException: The directory '/Users/Olivier/GitHub/sonar-ldap/server/sonar-ldap-plugin' does not exist for Maven module org.sonarsource.ldap:server:jar:2.2-SNAPSHOT. Please check the property sonar.sources
+	at org.sonarsource.scanner.maven.bootstrap.ScannerBootstrapper.execute(ScannerBootstrapper.java:65)
+	at org.sonarsource.scanner.maven.SonarQubeMojo.execute(SonarQubeMojo.java:108)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:208)
+	... 20 more
+Caused by: org.apache.maven.plugin.MojoExecutionException: The directory '/Users/Olivier/GitHub/sonar-ldap/server/sonar-ldap-plugin' does not exist for Maven module org.sonarsource.ldap:server:jar:2.2-SNAPSHOT. Please check the property sonar.sources
+	at org.sonarsource.scanner.maven.bootstrap.MavenProjectConverter.existingPathsOrFail(MavenProjectConverter.java:513)
+	at org.sonarsource.scanner.maven.bootstrap.MavenProjectConverter.sourcePaths(MavenProjectConverter.java:499)
+	at org.sonarsource.scanner.maven.bootstrap.MavenProjectConverter.mainSources(MavenProjectConverter.java:476)
+	at org.sonarsource.scanner.maven.bootstrap.MavenProjectConverter.synchronizeFileSystemAndOtherProps(MavenProjectConverter.java:355)
+	at org.sonarsource.scanner.maven.bootstrap.MavenProjectConverter.computeSonarQubeProperties(MavenProjectConverter.java:248)
+	at org.sonarsource.scanner.maven.bootstrap.MavenProjectConverter.configureModules(MavenProjectConverter.java:203)
+	at org.sonarsource.scanner.maven.bootstrap.MavenProjectConverter.configure(MavenProjectConverter.java:130)
+	at org.sonarsource.scanner.maven.bootstrap.ScannerBootstrapper.collectProperties(ScannerBootstrapper.java:102)
+	at org.sonarsource.scanner.maven.bootstrap.ScannerBootstrapper.execute(ScannerBootstrapper.java:63)
+	... 23 more
+[ERROR] 
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
