@@ -10,3 +10,4 @@ build/
 *.swp
 .vscode/
 *.log
+.idea/
