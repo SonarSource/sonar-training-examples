@@ -7,7 +7,8 @@ var Person = function(first, last, middle) {
 Person.prototype = {
 
     whoAreYou : function() {
-        return this.first + (this.middle ? ' ' + this.middle: '') + ' ' + this.last;
+        // FIXME swap first and last
+        return this.last + (this.middle ? ' ' + this.middle: '') + ' ' + this.first;
     }
 
 };
