@@ -10,7 +10,7 @@ Person.prototype = {
 
     whoAreYou : function() {
         // Handle case where first is NaN
-        if (this.first === NaN {
+        if (this.first === NaN) {
           return this.last;
         } else {
             return this.first + (this.middle ? ' ' + this.middle: '') + ' ' + this.last;
