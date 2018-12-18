@@ -7,7 +7,12 @@ var Person = function(first, last, middle) {
 Person.prototype = {
 
     whoAreYou : function() {
-        return this.first + (this.middle ? ' ' + this.middle: '') + ' ' + this.last;
+        // FIXME: Handling case where first in NaN
+        if (this.first === NaN) {
+          return this.first + (this.middle ? ' ' + this.middle: '') + ' ' + this.last;
+        } else {
+          return this.last;
+        }
     }
 
 };
