@@ -8,14 +8,12 @@ import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
-import java.util.Enumeration;
-import java.util.HashMap;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.apache.commons.beanutils.BeanUtils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -33,27 +31,21 @@ public class Insecure {
     Files.exists(Paths.get("/tmp/", obj));
   }
 
-  public void hackRequest(HttpServletRequest request, Connection connection) {
+  public String taintedSQL(HttpServletRequest request, Connection connection) throws Exception {
     String user = request.getParameter("user");
-    String password = "password";
-    password = request.getParameter("pass");
-    String query = "SELECT * FROM users WHERE user = '" + user + "' AND pass = '" + password + "'";
-    try {
-      java.sql.Statement statement = connection.createStatement();
-      java.sql.ResultSet resultSet = statement.executeQuery(query);
-      if (resultSet.next()) {
-        Object obj = new Object();
-        HashMap map = new HashMap<>();
-        Enumeration names = request.getParameterNames();
-        while (names.hasMoreElements()) {
-          String name = (String) names.nextElement();
-          map.put(name, request.getParameterValues(name));
-        }
-        BeanUtils.populate(obj, map);
-      }
-    } catch (Exception e) {
-    }
+    String query = "SELECT userid FROM users WHERE username = '" + user  + "'";
+    Statement statement = connection.createStatement();
+    ResultSet resultSet = statement.executeQuery(query);
+    return resultSet.getString(0);
   }
+  
+  public String hotspotSQL(Connection connection, String user) throws Exception {
+	  Statement statement = null;
+	  statement = connection.createStatement();
+	  ResultSet rs = statement.executeQuery("select userid from users WHERE username=" + user);
+	  return rs.getString(0);
+	}
+
 
   public void modResponse(HttpServletResponse response) {
     Cookie c = new Cookie("SECRET", "SECRET");
