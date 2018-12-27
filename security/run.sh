@@ -7,12 +7,12 @@ if [ "$SQ_URL" != "" ]; then
    HOST=$SQ_URL
 fi
 
-sqHostOpt="-Dsonar.host.url=$SQ_URL"
+sqHostOpt="-Dsonar.host.url=$HOST"
 
 if [ "$TOKEN" != "" ]; then
    sqLoginOpt="-Dsonar.login=$TOKEN"
    echo "Deleting project"
-   curl -X POST $curlLoginOpt $HOST/api/projects/delete?project=$PK
+   curl -X POST -u $TOKEN: $HOST/api/projects/delete?project=$PK
 fi
 
 echo "Running analysis"
