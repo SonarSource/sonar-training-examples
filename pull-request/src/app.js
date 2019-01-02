@@ -9,6 +9,7 @@ Person.prototype = {
     whoAreYou : function() {
         if (this.first === NaN) {
           return this.last;
+          i = 0;
         } else {
           return this.first + (this.middle ? ' ' + this.middle: '') + ' ' + this.last;
         }
