@@ -2,7 +2,7 @@ function Person(first, last) {
     this.firstName = first;
     this.lastName = last;
     this.age = null;
-    this.eyeColor = undefined;
+    this.eyeColor = null;
     this.nationality = null;
 }
 
