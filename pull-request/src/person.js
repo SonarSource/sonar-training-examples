@@ -12,7 +12,7 @@ Person.prototype.fullname = function() {
 
 Person.prototype.wishHappyBirthday = function() {
     if (this.age === NaN) {
-        this.age = 1
+        this.age = 1;
     } else {
         this.age++;
     }
