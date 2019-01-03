@@ -1,9 +1,9 @@
 function Person(first, last) {
     this.firstName = first;
     this.lastName = last;
-    this.age = undefined;
-    this.eyeColor = undefined;
-    this.nationality = undefined;
+    this.age = null;
+    this.eyeColor = null;
+    this.nationality = null;
 }
 
 Person.prototype.fullname = function() {
