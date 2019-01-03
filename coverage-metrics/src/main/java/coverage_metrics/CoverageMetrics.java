@@ -15,4 +15,12 @@ public class CoverageMetrics {
    }
    return (float)i/(k+1);
   }
+
+  public void somethingStupid(int max) {
+    int i;
+    float x;
+    for (i=0; i > max; i++) {
+      x = f(i);
+    }
+  }
 }
