@@ -19,7 +19,7 @@ public class CoverageMetrics {
   public void somethingStupid(int max) {
     int i;
     float x;
-    for (i=0; i > max; i++) {
+    for (i=0; i < max; i++) {
       x = f(i);
     }
   }
