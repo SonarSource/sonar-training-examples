@@ -7,9 +7,11 @@ function Person(first, last) {
 }
 
 Person.prototype.fullname = function() {
+    console.log("About to return full name);
     return this.firstName + " " + this.lastName;
 }
 
 Person.prototype.wishHappyBirthday = function() {
+    console.log("About to wish someone a happy birthday!");
     return "Happy birthday " + this.firstName;
 }
