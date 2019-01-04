@@ -7,7 +7,7 @@ function Person(first, last) {
 }
 
 Person.prototype.fullname = function() {
-    console.log("About to return full name);
+    console.log("About to return full name");
     return this.firstName + " " + this.lastName;
 }
 
