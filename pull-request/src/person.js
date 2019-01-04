@@ -11,5 +11,7 @@ Person.prototype.fullname = function() {
 }
 
 Person.prototype.wishHappyBirthday = function() {
+    console.log("Wishing happy birthday");
     return "Happy birthday " + this.firstName;
+    this.age++;
 }
