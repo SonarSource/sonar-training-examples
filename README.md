@@ -19,3 +19,5 @@ Several examples of analysis that demonstrate different use cases
 * [file-renaming](file-renaming/): Demonstrate the SonarQube 6.7+ issue tracking preservation (and new code preservation) in case of file renaming or file move.
 
 * [security](security/): Example of (7.3+) Vulnerabilities and Security Hotspots.
+
+* [external-issues](external-issues/): Example of (7.2+) external linter issues import.
