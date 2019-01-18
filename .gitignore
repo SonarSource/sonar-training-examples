@@ -13,3 +13,4 @@ build/
 .idea/
 *.iml
 *.class
+*.pyc
