@@ -12,3 +12,4 @@ build/
 *.log
 .idea/
 *.iml
+*.class
