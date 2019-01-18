@@ -12,7 +12,7 @@ against corporate policy (eg treat employees based on gender, religion...). Admi
 
 0. Run the imaginary linter to search for corporate policy violations.
 This is actually not executed, we assume that this would produce the [issues.json](issues.json) file that's already in the repository (under the root directory of this project)
-You can quickly look at the JSON file structure, it's quite self explanatory. More details on the format at [https://docs.sonarqube.org/latest/analysis/generic-issue/]
+You can quickly look at the JSON file structure, it's quite self explanatory. More details on the format at https://docs.sonarqube.org/latest/analysis/generic-issue/
 
 1. Run `sonar-scanner`, potentially with some specific options like sonar.login, url etc...
 The [sonar-project.properties](sonar-project.properties) file already has the setting `sonar.externalIssuesReportPaths=issues.json` set to parse the file
