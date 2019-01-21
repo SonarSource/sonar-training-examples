@@ -2,6 +2,9 @@
 
 me=$(basename $0)
 
+# Load common environment
+. ../sqlib.sh
+
 KEYS="bank9=BANK-RETAIL-401K
 tier2-biz-logic=WEBSITE-TIER2-BIZLOGIC"
 
@@ -16,7 +19,7 @@ for p in `ls | grep -e tier -e bank -e insurance | grep -v $me`; do
 		pk=`grep sonar.projectKey $p/sonar-project.properties | cut -d '=' -f 2`
    else
       # We extract the key from the static mapping table
-		pk=`echo $KEYS | grep $ | cut -d '=' -f 2`
+		pk=`echo $KEYS | grep $p | cut -d '=' -f 2`
 	fi
-	curl -X POST -u $TOKEN: "$SQ_URL/api/project_tags/set?project=$pk&tags=superbank.com"
+	curl -X POST -u $SQ_TOKEN: "$SQ_URL/api/project_tags/set?project=$pk&tags=superbank.com"
 done
