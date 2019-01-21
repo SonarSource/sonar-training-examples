@@ -8,7 +8,7 @@ REPORTS_DIRECTORY=reports
 [ ! -d "$REPORTS_DIRECTORY" ] && mkdir $REPORTS_DIRECTORY
 
 echo "Running checkstyle on Java code"
-java -jar $CHECKSTYLE_JAR -c /sun_checks.xml src/java/HelloWorld.java -f xml >reports/checkstyle-report.xml
+java -jar $CHECKSTYLE_JAR -c /sun_checks.xml src/java/HelloWorld.java -f xml | grep -v "Checkstyle ends with" >reports/checkstyle-report.xml
 
 echo "Running pylint on Python code"
 pylint src/python/sonarqube -r n --msg-template="{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}" > $REPORTS_DIRECTORY/pylint-report.txt
