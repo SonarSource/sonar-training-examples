@@ -1,0 +1,37 @@
+{ "issues": [
+    {
+      "engineId": "fair-employer",
+      "ruleId": "gender-forbidden",
+      "severity":"MAJOR",
+      "type":"CODE_SMELL",
+      "primaryLocation": {
+        "message": "Compensation calculation based on employee gender is forbidden",
+        "filePath": "src/employee.js",
+        "textRange": {
+          "startLine": 17,
+          "endLine": 21,
+          "startColumn": 4,
+          "endColumn": 5
+        }
+      },
+      "effortMinutes": 20
+    },
+    {
+      "engineId": "fair-employer",
+      "ruleId": "religion-forbidden",
+      "severity": "CRITICAL",
+      "type": "CODE_SMELL",
+      "primaryLocation": {
+        "message": "Storing employee religion is forbidden",
+        "filePath": "src/employee.js",
+        "textRange": {
+            "startLine": 25,
+            "endLine": 25,
+            "startColumn": 4,
+            "endColumn": 17
+        },
+        "effortMinutes": 5
+      }
+    }
+  ]
+}

@@ -12,6 +12,7 @@ build/
 *.log
 .idea/
 *.iml
+*.class
 *.pyc
 **/target/
 **/bin/
