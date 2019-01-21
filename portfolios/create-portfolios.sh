@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Load common environment
+. ../sqlib.sh
+
 DEF_FILE=portfolios-def.txt
 
 me=$(basename $0)
@@ -7,11 +10,6 @@ if [ "$1" != "" ]; then
 	echo "Usage: $me [-h]"
 	exit 1
 fi
-
-AUTH="-Dsonar.login=$TOKEN"
-
-# Create the portfolio
-#curl -X POST -u $TOKEN: $SQ_URL/api/views/delete?key=$key
 
 let finished=0
 let i=1
@@ -28,22 +26,22 @@ while [ $i -le $nbportfolios ]; do
    if [ "$mode" == "APPLICATION" ]; then
       qualifier="&qualifier=APP"
    fi
-	curl -s -X POST -u $TOKEN: "$SQ_URL/api/views/create?name=$name&key=$key&description=$desc$qualifier" 1>/dev/null
+	curl -s -X POST -u $SQ_TOKEN: "$SQ_URL/api/views/create?name=$name&key=$key&description=$desc$qualifier" 1>/dev/null
    case $mode in
 	REGEXP)
 		regexp=$(echo $params | sed 's/ /%20/g')
-		curl -s -X POST -u $TOKEN: "$SQ_URL/api/views/mode?key=$key&selectionMode=$mode&regexp=$regexp" 1>/dev/null
+		curl -s -X POST -u $SQ_TOKEN: "$SQ_URL/api/views/mode?key=$key&selectionMode=$mode&regexp=$regexp" 1>/dev/null
       ;;
    MANUAL|APPLICATION)
       for projkey in $params; do
          echo "Adding project key $projkey to portfolio/application"
-   		curl -s -X POST -u $TOKEN: "$SQ_URL/api/views/add_project?key=$key&project_key=$projkey" 1>/dev/null
+   		curl -s -X POST -u $SQ_TOKEN: "$SQ_URL/api/views/add_project?key=$key&project_key=$projkey" 1>/dev/null
   	   done
       ;;
    PARENT)
       for subportkey in $params; do
          echo "Adding sub-portfolio key $subportkey to portfolio"
-   		curl -s -X POST -u $TOKEN: "$SQ_URL/api/views/add_local_view?key=$key&ref_key=$subportkey" 1>/dev/null
+   		curl -s -X POST -u $SQ_TOKEN: "$SQ_URL/api/views/add_local_view?key=$key&ref_key=$subportkey" 1>/dev/null
   	   done
       ;;
    *)

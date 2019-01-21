@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Set SQ environment
+. ../sqlib.sh
+
 FILE="src/helloworld/HelloWorld.java"
 PK="training:branches"
 PN="Training: Branches"
@@ -19,23 +22,21 @@ if [ "$1" == "sonar.branch" ]; then
    BRANCH_PROP="sonar.branch"
    TARGET_PROP="sonar.foo"
 fi
-if [ "$SQ_URL" != "" ]; then
-   sqHostOpt="-Dsonar.host.url=$SQ_URL"
-fi
-if [ "$TOKEN" != "" ]; then
-   sqLoginOpt="-Dsonar.login=$TOKEN"
-fi
 
-PARAMS="$sqHostOpt $sqLoginOpt -Dsonar.projectKey=$PK"
-
+PARAMS="-Dsonar.host.url=$SQ_URL -Dsonar.login=$SQ_TOKEN -Dsonar.projectKey=$PK"
+PARAMS="-Dsonar.projectKey=$PK"
 
 cp $FILE.orig $FILE
 
 # Delete existing project
-curl -X POST -u $TOKEN: $SQ_URL/api/projects/delete?project=$PK
+curl -X POST -u $SQ_TOKEN: $SQ_URL/api/projects/delete?project=$PK 
+echo ""
 
 # Scan initial master branch
-sonar-scanner $PARAMS -Dsonar.projectName="$PN" -Dsonar.projectVersion=1.0 -Dsonar.projectDate=2018-06-01
+echo "sonar-scanner $PARAMS -Dsonar.projectName=\"$PN\" -Dsonar.projectVersion=1.0 -Dsonar.projectDate=2018-06-01"
+sonar-scanner $PARAMS -Dsonar.projectName="$PN" -Dsonar.projectVersion=1.0 -Dsonar.projectDate=2018-06-01 -X
+
+exit 1
 
 # Release branch
 # Scan the baseline code from the branched master

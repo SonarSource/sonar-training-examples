@@ -1,19 +1,12 @@
 #!/bin/bash
+
+# Load common environment
+. ../sqlib.sh
+
 PK="training:security"
-HOST=http://localhost:9000
 
-
-if [ "$SQ_URL" != "" ]; then
-   HOST=$SQ_URL
-fi
-
-sqHostOpt="-Dsonar.host.url=$HOST"
-
-if [ "$TOKEN" != "" ]; then
-   sqLoginOpt="-Dsonar.login=$TOKEN"
-   echo "Deleting project"
-   curl -X POST -u $TOKEN: $HOST/api/projects/delete?project=$PK
-fi
+echo "Deleting project"
+curl -X POST -u $SQ_TOKEN: $SQ_HOST/api/projects/delete?project=$PK
 
 echo "Running analysis"
-mvn clean verify sonar:sonar $sqHostOpt $sqLoginOpt
+mvn clean verify sonar:sonar -Dsonar.host.url=$SQ_HOST -Dsonar.login=$SQ_TOKEN -Dsonar.projectKey=$PK
