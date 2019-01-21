@@ -29,7 +29,8 @@
             "endLine": 25,
             "startColumn": 4,
             "endColumn": 17
-        }
+        },
+        "effortMinutes": 5
       }
     }
   ]
