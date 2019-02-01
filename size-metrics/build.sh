@@ -13,15 +13,9 @@ elif [ "$1" = "1" ] || [ "$1" = "2" ] || [ "$1" = "all" ]; then
 	cp $testFile.ut$ut $testFile
 fi
 
-if [ "$SQ_URL" != "" ]; then
-	sqHostOpt="-Dsonar.host.url=$SQ_URL"
-fi
-if [ "$TOKEN" != "" ]; then
-	sqLoginOpt="-Dsonar.login=$TOKEN"
-fi
 mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install \
    -Dmaven.test.failure.ignore=true \
-   sonar:sonar $sqHostOpt $sqLoginOpt \
+   sonar:sonar -Dsonar.host.url=$SQ_URL -Dsonar.login=$SQ_TOKEN \
    -Dsonar.exclusions=pom.xml \
    -Dsonar.projectKey=training:size-metrics \
    $*

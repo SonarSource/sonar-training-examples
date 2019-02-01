@@ -1,12 +1,15 @@
-# Check-out source code
-# git clone https://github.com/SonarSource/sonar-ldap.git
-# git pull origin master
+#!/bin/bash
 
-# Build code, run tests
-# mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install -Dmaven.test.failure.ignore=true
+# Load common environment
+. ../../sqlib.sh
+
+# Read projectKey from sonar-project.properties
+PK=WEBSITE-TIER2-BIZLOGIC
+
 cd sonar-ldap
 mvn clean install
 
 # Run scan
-mvn sonar:sonar -Dsonar.host.url=$SQ_URL -Dsonar.login=$TOKEN -Dsonar.projectKey=WEBSITE-TIER2-BIZLOGIC -Dsonar.projectName="Bank Web Site: Tier 2 - Biz Logic"
+mvn sonar:sonar -Dsonar.host.url=$SQ_URL -Dsonar.login=$SQ_TOKEN -Dsonar.projectKey=$PK -Dsonar.projectName="Bank Web Site: Tier 2 - Biz Logic"
 cd -
+curl -X POST -u $SQ_TOKEN: $SQ_URL/api/project_tags/set?project=$PK&tag=superbank.com
