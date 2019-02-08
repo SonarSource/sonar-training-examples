@@ -24,7 +24,6 @@ if [ "$1" == "sonar.branch" ]; then
 fi
 
 PARAMS="-Dsonar.host.url=$SQ_URL -Dsonar.login=$SQ_TOKEN -Dsonar.projectKey=$PK"
-PARAMS="-Dsonar.projectKey=$PK"
 
 cp $FILE.orig $FILE
 
@@ -35,8 +34,6 @@ echo ""
 # Scan initial master branch
 echo "sonar-scanner $PARAMS -Dsonar.projectName=\"$PN\" -Dsonar.projectVersion=1.0 -Dsonar.projectDate=2018-06-01"
 sonar-scanner $PARAMS -Dsonar.projectName="$PN" -Dsonar.projectVersion=1.0 -Dsonar.projectDate=2018-06-01 -X
-
-exit 1
 
 # Release branch
 # Scan the baseline code from the branched master
