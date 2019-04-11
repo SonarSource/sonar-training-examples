@@ -21,3 +21,5 @@ Several examples of analysis that demonstrate different use cases
 * [security](security/): Example of (7.3+) Vulnerabilities and Security Hotspots.
 
 * [external-issues](external-issues/): Example of (7.2+) external linter issues import.
+
+* [pull-request](pull-request/): Example of (7.7+) support for GitHub pull request analysis
