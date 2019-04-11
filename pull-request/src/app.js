@@ -31,7 +31,9 @@ if (str == null && str.length == 0) {
 
 switch(nonExistentVar) {
   case 1: 
-    console.log("one");
+    while (true) {
+      console.log("one");
+    }
     break;
   case 2:
     console.log("two");
