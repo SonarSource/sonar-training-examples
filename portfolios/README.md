@@ -11,6 +11,6 @@ This will create, from the description provided in file **portfolios-def.txt**,:
    - A meaningful hierarchy of portfolios 
    - An application that recombines the 3 tiers of a web application
 
-- Run `sonar-scanner views` to compute the portfolios
+- Re-run `./scanAllProjects.sh` to compute the portfolios
 
 If needed you can also use the `delete-portfolios.sh` script that will remove all portfolios and applications created by the `create-portfolios.sh` script 
