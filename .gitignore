@@ -16,3 +16,5 @@ build/
 *.pyc
 **/target/
 **/bin/
+**/obj/
+.sonarqube/
