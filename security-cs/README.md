@@ -7,7 +7,7 @@ This example demonstrates:
 
 ## Prerequisites
 These requirements assume you plan to set up the example from macOS.
-- Download and install .NET Core from: https://dotnet.microsoft.com/download
+- Download and install .NET Core 2.2 or later from: https://dotnet.microsoft.com/download
 - Install the dotnet-sonarscanner as a global tool for .NET following the guide here: https://www.nuget.org/packages/dotnet-sonarscanner
 - Add dotnet and the global tools install locations to your PATH, e.g. `export PATH=$PATH:/usr/local/share/dotnet:~/.dotnet/tools`
 
