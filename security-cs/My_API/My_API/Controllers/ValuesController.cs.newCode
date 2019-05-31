@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using System.Data;
-using System.Data.SqlClient;
-
 
 namespace My_API.Controllers
 {
@@ -13,6 +10,10 @@ namespace My_API.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private ValuesDao valuesDao;
+        public ValuesController() {
+            valuesDao = new ValuesDao();
+        }
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
@@ -24,28 +25,7 @@ namespace My_API.Controllers
         [HttpGet("{id}")]
         public ActionResult<string> Get(string id)
         {
-            var connection = new SqlConnection();
-            try
-            {
-                connection.ConnectionString = "db info";
-                connection.Open();
-                var selectSql = string.Format("select from MyStuff where id='{0}';", id);
-                var selectCommand = new SqlCommand(selectSql, connection);
-
-                var dataReader = selectCommand.ExecuteReader();
-                return dataReader.GetString(0);
-            }
-            catch (Exception ex)
-            {
-            }
-            finally
-            {
-                if (connection.State == ConnectionState.Open)
-                {
-                    connection.Close();
-                }
-            }
-            return null;
+            return valuesDao.getValue(id);
         }
 
         // POST api/values
