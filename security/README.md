@@ -22,3 +22,5 @@ Project consists of a single class (`training.security.Insecure.java`) with a nu
 At the bottom of the class you see a bunch of methods that demonstrate custom injections.
 - The method without sanitization (`doSomething()`) has an injection vulnerability
 - The method with custom sanitization (`doSomethingSanitized()`) has no vulnerability
+
+The custom security configuration file is in the root directory [here](s3649JavaSqlInjectionConfig.json)
