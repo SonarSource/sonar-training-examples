@@ -16,8 +16,9 @@ This will:
 - Delete the project key **training:security** if it exists in SonarQube (to start from a scratch)
 - Run `mvn clean verify sonar:sonar` to re-create the project
 
-Project consists of a single class (training.security.Insecure.java) with a number of Vulnerabilities and Security Hotspots.
+Project consists of a single class (`training.security.Insecure.java`) with a number of Vulnerabilities and Security Hotspots.
 
-At the bottom of the class you see a bunch of custom methods that demonstrate custom injections.
-- The method without sanitization has an injection vulnerability
-- The method with custom sanitization has no vulnerability
+## Custom security configuration 
+At the bottom of the class you see a bunch of methods that demonstrate custom injections.
+- The method without sanitization (`doSomething()`) has an injection vulnerability
+- The method with custom sanitization (`doSomethingSanitized()`) has no vulnerability
