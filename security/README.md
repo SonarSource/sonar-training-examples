@@ -5,6 +5,9 @@ This example demonstrates:
 - Vulnerabilities
 - Security Hotspots
 
+It also demonstrates the possibility to define your own custom sources, sanitizers and sinks to detect more injection cases
+(or avoid false positives)
+
 ## Usage
 
 Run `./run.sh`
@@ -14,3 +17,7 @@ This will:
 - Run `mvn clean verify sonar:sonar` to re-create the project
 
 Project consists of a single class (training.security.Insecure.java) with a number of Vulnerabilities and Security Hotspots.
+
+At the bottom of the class you see a bunch of custom methods that demonstrate custom injections.
+- The method without sanitization has an injection vulnerability
+- The method with custom sanitization has no vulnerability
