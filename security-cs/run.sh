@@ -23,7 +23,7 @@ echo "Running initial project scan"
 doScan
 
 echo "Simulating change that introduces vulnerabilities"
-pushd My_API/Controllers
+pushd Controllers
 cp ValuesController.cs ValuesController.cs.orig
 cp ValuesController.cs.newCode ValuesController.cs 
 mv ValuesDao.cs.newCode ValuesDao.cs 
@@ -33,7 +33,7 @@ echo "Running follow-up project scan"
 doScan
 
 # restore things as they were 
-pushd My_API/Controllers
+pushd Controllers
 mv ValuesController.cs.orig ValuesController.cs 
 mv ValuesDao.cs ValuesDao.cs.newCode
 popd
