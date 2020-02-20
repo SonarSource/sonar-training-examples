@@ -14,7 +14,11 @@ Requirements are the same on Windows, for the batch command file.
 
 ## Usage
 
+### macOS
 Run `./run.sh`
+
+### Windows
+Run `run.bat`
 
 This will:
 - Delete the project key **training:security-cs** if it exists in SonarQube (to start from scratch)
