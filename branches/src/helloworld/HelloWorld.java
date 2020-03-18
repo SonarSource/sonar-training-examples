@@ -15,6 +15,7 @@ public class HelloWorld extends Object {
        System.out.println("New buggy loop for release LL branch");
     }
 
+    // FIXME
     // int k = 5 / i;
 
     if ( i = 0 ) {
