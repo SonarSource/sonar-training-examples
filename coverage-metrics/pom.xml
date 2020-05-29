@@ -41,36 +41,32 @@
   <!-- BEGIN: Specific to mapping unit tests and covered code -->
   <profiles>
     <profile>
-      <id>coverage-per-test</id>
+      <id>coverage</id>
       <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <!-- Minimal supported version is 2.4 -->
-            <version>2.13</version>
-            <configuration>
-              <properties>
-                <property>
-                  <name>listener</name>
-                  <value>org.sonar.java.jacoco.JUnitListener</value>
-                </property>
-              </properties>
-            </configuration>
-          </plugin>
-        </plugins>
+       <plugins>
+        <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <!-- simply use the last version -->
+        <!--version>0.8.4</version-->
+        <executions>
+          <execution>
+            <id>prepare-agent</id>
+            <goals>
+             <goal>prepare-agent</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>report</id>
+            <goals>
+             <goal>report</goal>
+            </goals>
+          </execution>
+        </executions>
+        </plugin>
+       </plugins>
       </build>
-
-      <dependencies>
-        <dependency>
-          <groupId>org.sonarsource.java</groupId>
-          <artifactId>sonar-jacoco-listeners</artifactId>
-          <version>3.8</version>
-          <scope>test</scope>
-        </dependency>
-      </dependencies>
     </profile>
-  </profiles>
-  <!-- END: Specific to mapping unit tests and covered code -->
-  
+  </profiles> 
+  <!-- END: Specific to mapping unit tests and covered code -->  
 </project>

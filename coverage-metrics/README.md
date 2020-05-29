@@ -13,11 +13,14 @@ The test file contains one UT without any assert statement which is bad practice
 - Run `build.sh 2 [<optional_analysis_properties>]` to build and analyze the project with one unit test (UT2) that will give another partial coverage
 - Run `build.sh all [<optional_analysis_properties>]` to build and analyze the project with both UT (UT1 and UT2) that will yield 100% coverage
 
-The `build.sh` script uses different tests files depeding on the parameter (1, 2 or both)
+The `build.sh` script uses different tests files depending on the parameter (1, 2 or both)
 and then runs:
 ```
-mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install -P coverage-per-test sonar:sonar [<optional_analysis_properties>]
+mvn clean install -P coverage sonar:sonar [<optional_analysis_properties>]
 ```
 
 ## Result
 Each different build command will create a project named "Training: Coverage Metrics X" where you can witness the resulting size metrics and coverage information
+
+## Note
+Deprecated since 5.12, JaCoCo's binary report format has been dropped with SonarJava analyser 6.0+, and this coverage training has thus been adapted for the newest XML reporting format. Find details with [this community post]
