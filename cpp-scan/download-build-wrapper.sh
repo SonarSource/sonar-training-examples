@@ -23,4 +23,9 @@ curl -s --create-dirs -o $WRAPPER_DOWNLOAD_LOC/wrapper.zip $SQ_URL/static/cpp/$O
 echo "Unzipping..."
 cd $WRAPPER_DOWNLOAD_LOC; unzip -q -o wrapper.zip; cd - 1>/dev/null
 echo "Build Wrapper downloaded at $WRAPPER_DOWNLOAD_LOC/$OS_WRAPPER/$OS_WRAPPER"
-$WRAPPER_DOWNLOAD_LOC/$OS_WRAPPER/$OS_WRAPPER -v
+
+if [ ! -x "$WRAPPER_DOWNLOAD_LOC/$OS_WRAPPER/$OS_WRAPPER" ]; then
+	echo "$WRAPPER_DOWNLOAD_LOC/$OS_WRAPPER/$OS_WRAPPER not found or not executable"
+	exit 1
+fi
+$WRAPPER_DOWNLOAD_LOC/$OS_WRAPPER/$OS_WRAPPER || true

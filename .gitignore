@@ -18,3 +18,6 @@ build/
 **/bin/
 **/obj/
 .sonarqube/
+.DS_Store
+**/node_modules/
+angular/coverage/

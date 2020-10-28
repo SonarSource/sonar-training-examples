@@ -2,7 +2,7 @@
 
 ## Use case
 This example demonstrates:
-- Branches in general
+- [Branches](https://docs.sonarqube.org/latest/branches/overview/) in general
 - Difference between short lived branches and long lived branches
 - Difference of SQ 5.6 _old-style_ branches and SQ 6.7 _new-style_ branches
 

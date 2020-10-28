@@ -1,0 +1,23 @@
+{
+  "sources": [
+    {
+      "methodId": "training.security.Insecure#getInput(Ljava/lang/String;)Ljava/lang/String;"
+    }
+  ],
+  "sanitizers": [
+    {
+      "methodId": "training.security.Insecure#verifyData(Ljava/lang/String;)V",
+      "args": [
+        1
+      ]
+    }
+  ],
+  "sinks": [
+    {
+      "methodId": "training.security.Insecure#storeData(Ljava/lang/String;)V",
+      "args": [
+        1
+      ]
+    }
+  ]  
+}

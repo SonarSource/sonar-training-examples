@@ -7,8 +7,8 @@ regardless of whet this command is
 ## Usage
 - Build normally the project with the command
 `./build.sh`
-- Eplain that, for SonarQube analysis, this command must be wrapped with build-wrapper
-  so run again `build-wrapper --out-dir bw-output ./build.sh`
+- Explain that, for SonarQube analysis, this command must be wrapped with build-wrapper. So run again `build-wrapper --out-dir bw-output ./build.sh`
+  - See note about the download-build-wrapper.sh script below and adapt the command line accordingly
 - Show briefly the generated directory `bw-output`
 - Run `sonar-scanner -Dsonar.cfamily.build-wrapper-output=bw-output` to run the analysis.
 Explain that the `sonar.cfamily.build-wrapper-output` property must point at the same directory provided to build wrapper

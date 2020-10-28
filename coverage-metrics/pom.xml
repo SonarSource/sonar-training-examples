@@ -41,7 +41,7 @@
   <!-- BEGIN: Specific to mapping unit tests and covered code -->
   <profiles>
     <profile>
-      <id>coverage-per-test</id>
+      <id>coverage</id>
       <build>
         <plugins>
           <plugin>
@@ -79,17 +79,7 @@
           </plugin>
         </plugins>
       </build>
-
-      <dependencies>
-        <dependency>
-          <groupId>org.sonarsource.java</groupId>
-          <artifactId>sonar-jacoco-listeners</artifactId>
-          <version>3.8</version>
-          <scope>test</scope>
-        </dependency>
-      </dependencies>
     </profile>
   </profiles>
   <!-- END: Specific to mapping unit tests and covered code -->
-
 </project>

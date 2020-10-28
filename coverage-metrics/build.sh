@@ -25,4 +25,5 @@ mvn clean install -P coverage-per-test \
    -Dsonar.exclusions=pom.xml \
    -Dsonar.projectKey="training:test-ut$ut" -Dsonar.projectName="Training: Coverage UT $ut" $*
 
+
 exit $?

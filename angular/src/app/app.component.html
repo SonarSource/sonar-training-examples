@@ -1,0 +1,16 @@
+<div class="app-container">
+  <!--The content below is only a placeholder and can be replaced.-->
+  <div style="text-align:center">
+    <h1>
+      Welcome to {{ title }}!
+    </h1>
+    <img
+      src="https://www.sonarsource.com/assets/sonarsource-black-logo-05ca896462d08cc54739bf42e27c778071bdd67301041e4ebcc9206635fe1922.svg">
+  </div>
+  <p>Things to click:</p>
+  <ul>
+    <li><a href="" (click)="doStuff()">Do Stuff covered by unit tests</a></li>
+    <li><a id="doOtherStuff" href="" (click)="doOtherStuff()">Do Other Stuff covered by unit tests</a></li>
+  </ul>
+  <router-outlet></router-outlet>
+</div>
