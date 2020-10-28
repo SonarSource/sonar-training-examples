@@ -19,7 +19,7 @@ elif [ "$1" = "1" ] || [ "$1" = "2" ] || [ "$1" = "all" ]; then
 	cp $testFile.ut$ut $testFile
 fi
 
-mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install \
+mvn clean install -P coverage-per-test \
    -Dmaven.test.failure.ignore=true \
    sonar:sonar -Dsonar.host.url=$SQ_URL -Dsonar.login=$SQ_TOKEN \
    -Dsonar.exclusions=pom.xml \
