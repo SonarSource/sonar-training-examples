@@ -11,10 +11,10 @@ export class AppComponent {
   title = 'angular-example';
 
   doStuff() {
-    alert("I did stuff");
+    alert('I did stuff');
   }
 
   doOtherStuff() {
-    alert("I did other stuff");
+    alert('I did other stuff');
   }
 }
