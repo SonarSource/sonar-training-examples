@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) and modified to be a useful example of scanning such a project with SonarQube.
 
-TypeScript code coverage is assessed using the Istanbul reporter for Karma, configured in the `karma.conf.js` file. In the `build.sh` script, you'll see we run the `ng test` command with the `--code-coverage` parameter to make sure coverage results are captured. All that is needed in addition is to inform the sonar-scanner of the location of the LCOV results file (see the file `sonar-project.properties` for `sonar.typescript.lcov.reportPaths`). 
+TypeScript code coverage is assessed using the Istanbul reporter for Karma, configured in the `karma.conf.js` file. In the `build.sh` script, you'll see we run the `ng test` command with the `--code-coverage` parameter to make sure coverage results are captured. All that is needed in addition is to inform the sonar-scanner of the location of the LCOV results file (see the file `sonar-project.properties` for `sonar.javascript.lcov.reportPaths`). 
 
 ## Usage
 
