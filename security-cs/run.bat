@@ -22,9 +22,9 @@ call :doScan
 call :separator
 echo "Simulating change that introduces vulnerabilities"
 cd Controllers
-cp ValuesController.cs ValuesController.cs.orig
-cp ValuesController.cs.newCode ValuesController.cs 
-mv ValuesDao.cs.newCode ValuesDao.cs 
+copy ValuesController.cs ValuesController.cs.orig
+copy ValuesController.cs.newCode ValuesController.cs 
+move ValuesDao.cs.newCode ValuesDao.cs 
 cd ..
 
 call :separator
@@ -33,8 +33,8 @@ call :doScan
 call :separator
 echo Restore things as they were
 cd Controllers
-mv ValuesController.cs.orig ValuesController.cs 
-mv ValuesDao.cs ValuesDao.cs.newCode
+move ValuesController.cs.orig ValuesController.cs 
+move ValuesDao.cs ValuesDao.cs.newCode
 cd ../..
 goto :eof
 
