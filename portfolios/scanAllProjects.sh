@@ -21,5 +21,5 @@ for p in `ls | grep -e tier -e bank -e insurance | grep -v $me`; do
       # We extract the key from the static mapping table
 		pk=`echo $KEYS | grep $p | cut -d '=' -f 2`
 	fi
-	curl -X POST -u $SQ_TOKEN: "$SQ_URL/api/project_tags/set?project=$pk&tags=superbank.com"
+	curl -X POST -u $SONAR_TOKEN: "$SONAR_HOST_URL/api/project_tags/set?project=$pk&tags=superbank.com"
 done

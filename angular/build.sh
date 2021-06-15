@@ -9,4 +9,4 @@ npm install
 ./node_modules/.bin/ng test --code-coverage
 
 # call the sonar scanner
-sonar-scanner -Dsonar.host.url=$SQ_URL -Dsonar.login=$SQ_TOKEN
+sonar-scanner -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN

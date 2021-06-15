@@ -23,12 +23,12 @@ if [ "$1" == "sonar.branch" ]; then
    TARGET_PROP="sonar.foo"
 fi
 
-PARAMS="-Dsonar.host.url=$SQ_URL -Dsonar.login=$SQ_TOKEN -Dsonar.projectKey=$PK"
+PARAMS="-Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=$PK"
 
 cp $FILE.orig $FILE
 
 # Delete existing project
-curl -X POST -u $SQ_TOKEN: $SQ_URL/api/projects/delete?project=$PK 
+curl -X POST -u $SONAR_TOKEN: $SONAR_HOST_URL/api/projects/delete?project=$PK 
 echo ""
 
 # Scan initial master branch
