@@ -19,11 +19,11 @@ elif [ "$1" = "1" ] || [ "$1" = "2" ] || [ "$1" = "all" ]; then
 	cp $testFile.ut$ut $testFile
 fi
 
-mvn clean install -P coverage sonar:sonar  \
-    -Dsonar.projectKey="K21949"  \
-    -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN \
-
-    #-Dsonar.projectVersion=afterMerge
-    #-Dsonar.pullrequest.key=81 -Dsonar.pullrequest.branch=test21929
+mvn clean install -P coverage-per-test \
+   -Dmaven.test.failure.ignore=true \
+   sonar:sonar
+   -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN \
+   -Dsonar.exclusions=pom.xml \
+   -Dsonar.projectKey="training:test-ut$ut" -Dsonar.projectName="Training: Coverage UT $ut" $*
 
 exit $?
