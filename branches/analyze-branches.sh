@@ -28,7 +28,7 @@ PARAMS="-Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN -Dsonar.proj
 cp $FILE.orig $FILE
 
 # Delete existing project
-curl -X POST -u $SONAR_TOKEN: $SONAR_HOST_URL/api/projects/delete?project=$PK 
+curl -X POST -u $SONAR_TOKEN: $SONAR_HOST_URL/api/projects/delete?project=$PK
 echo ""
 
 # Scan initial master branch
