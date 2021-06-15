@@ -20,5 +20,5 @@ for p in `ls | grep -e tier -e bank -e insurance`; do
 done
 for pk in $KEYS; do
 	echo curl -X POST -u '$SONAR_TOKEN:' "$SONAR_HOST_URL/api/project_tags/set?project=$pk&tags=$tag"
-	curl -X POST -u $TOKEN: "$SONAR_HOST_URL/api/project_tags/set?project=$pk&tags=$tag"
+	curl -X POST -u $SONAR_TOKEN: "$SONAR_HOST_URL/api/project_tags/set?project=$pk&tags=$tag"
 done

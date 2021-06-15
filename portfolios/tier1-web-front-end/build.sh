@@ -10,4 +10,4 @@ sonar-scanner -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN -Dsona
 sonar-scanner -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=$PK -Dsonar.branch.name=release-2019.4
 sonar-scanner -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=$PK -Dsonar.branch.name=release-2020.1
 
-curl -X POST -u $SONAR_TOKEN: $SONAR_HOST_URL/api/project_tags/set?project=$PK&tags=superbank.com
+curl -X POST -u $SONAR_TOKEN: "$SONAR_HOST_URL/api/project_tags/set?project=$PK&tags=superbank.com"
