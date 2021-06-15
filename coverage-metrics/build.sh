@@ -20,8 +20,10 @@ elif [ "$1" = "1" ] || [ "$1" = "2" ] || [ "$1" = "all" ]; then
 fi
 
 mvn clean install -P coverage sonar:sonar  \
-    -Dsonar.projectKey="training:test-ut$ut"  \
-    -Dsonar.projectName="Training: Coverage UT $ut"  \
-    -Dsonar.host.url=$SQ_URL -Dsonar.login=$SQ_TOKEN
+    -Dsonar.projectKey="K21949"  \
+    -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN \
+
+    #-Dsonar.projectVersion=afterMerge
+    #-Dsonar.pullrequest.key=81 -Dsonar.pullrequest.branch=test21929
 
 exit $?
