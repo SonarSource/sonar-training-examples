@@ -3,22 +3,22 @@ package coverage_metrics;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
-public class CoverageMetricsTest {
+public class NewZoverageMetricsTest {
   @Test
   public void test1() throws Exception {
-    CoverageMetrics c = new CoverageMetrics();
+    NewZoverageMetrics c = new NewZoverageMetrics();
     assertEquals(0.5, c.f(1), 0.0);
   }
 
   @Test
   public void test2() throws Exception {
-    CoverageMetrics c = new CoverageMetrics();
+    NewZoverageMetrics c = new NewZoverageMetrics();
     assertEquals(0.0, c.f(0), 0.0);
   }
 
   @Test
   public void test3() {
-    CoverageMetrics c = new CoverageMetrics();
+    NewZoverageMetrics c = new NewZoverageMetrics();
     float x = c.f(5);
   }
 }
