@@ -14,4 +14,4 @@ mvn sonar:sonar -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN -Dso
 mvn sonar:sonar -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=$PK -Dsonar.projectName="Bank Web Site: Tier 2 - Biz Logic" -Dsonar.branch.name=release-2019.4
 mvn sonar:sonar -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=$PK -Dsonar.projectName="Bank Web Site: Tier 2 - Biz Logic" -Dsonar.branch.name=release-2020.1
 cd -
-curl -X POST -u $SONAR_TOKEN: $SONAR_HOST_URL/api/project_tags/set?project=$PK&tags=superbank.com
+curl -X POST -u $SONAR_TOKEN: "$SONAR_HOST_URL/api/project_tags/set?project=$PK&tags=superbank.com"
