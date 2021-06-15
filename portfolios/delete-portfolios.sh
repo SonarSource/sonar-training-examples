@@ -18,6 +18,6 @@ while [ $i -ge 1 ]; do
    portfolio=`cat $DEF_FILE | head -n $i | tail -n 1`
 	key=$(echo "$portfolio" | cut -d "," -f 1)
    echo "Deleting portfolio key $key"
-	curl -X POST -u $SQ_TOKEN: $SQ_URL/api/views/delete?key=$key
+	curl -X POST -u $SONAR_TOKEN: $SONAR_HOST_URL/api/views/delete?key=$key
    let i=$(expr $i-1)
 done

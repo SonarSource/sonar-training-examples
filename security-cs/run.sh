@@ -6,7 +6,7 @@
 PK="training:security-cs"
 
 
-echo "SQ_URL/SQ_TOKEN $SQ_URL / $SQ_TOKEN"
+echo "SONAR_HOST_URL/SONAR_TOKEN $SONAR_HOST_URL / $SONAR_TOKEN"
 
 doScan() {
   dotnet sonarscanner begin /d:sonar.host.url=$SONAR_HOST_URL /k:$PK /n:"C# Security Training Example" /d:sonar.login=$SONAR_TOKEN

@@ -1,9 +1,9 @@
 @echo off
 title "this command file mimicks sqlib.sh on Windows systems""
 call :separator
-echo "both SQ_URL:%SQ_URL% and SQ_TOKEN:%SQ_TOKEN% shall be set"
-IF [SQ_URL] == [] EXIT
-IF [SQ_TOKEN] == [] EXIT
+echo "both SONAR_HOST_URL:%SONAR_HOST_URL% and SONAR_TOKEN:%SONAR_TOKEN% shall be set"
+IF [SONAR_HOST_URL] == [] EXIT
+IF [SONAR_TOKEN] == [] EXIT
 
 REM . ../sqlib.sh
 
@@ -12,7 +12,7 @@ set PK=training:security-cs
 cd My_API
 call :separator
 echo "Deleting project %PK%"
-curl --silent --output nul --show-error -X POST -u "%SQ_TOKEN%:" "%SQ_URL%/api/projects/delete?project=training:security-cs"
+curl --silent --output nul --show-error -X POST -u "%SONAR_TOKEN%:" "%SONAR_HOST_URL%/api/projects/delete?project=training:security-cs"
 REM Curl for Windows needed (usually gets installed with git)
 
 call :separator
@@ -46,7 +46,7 @@ echo ##################################################################
 goto :eof
 
 :doScan
-  dotnet sonarscanner begin /d:sonar.host.url=%SQ_URL% /k:%PK% /n:"C# Security Training Example"  /d:sonar.login=%SQ_TOKEN%
+  dotnet sonarscanner begin /d:sonar.host.url=%SONAR_HOST_URL% /k:%PK% /n:"C# Security Training Example"  /d:sonar.login=%SONAR_TOKEN%
   dotnet build My_API.sln
-  dotnet sonarscanner end /d:sonar.login=%SQ_TOKEN%
+  dotnet sonarscanner end /d:sonar.login=%SONAR_TOKEN%
 goto :eof
