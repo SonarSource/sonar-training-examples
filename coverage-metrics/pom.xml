@@ -18,7 +18,7 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <!-- Minimal supported version is 4.7 -->
-      <version>4.11</version>
+      <version>4.13.1</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
