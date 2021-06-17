@@ -25,7 +25,7 @@ If you can produce a compilation database in the [Clang JSON format](https://cla
 `python3 convert-compile-commands.py compile_commands.json`
 - Run the scanner
 
-Even better, some compilation (make, cmake) can generate the compilation DB without actually compiling the code, and this is obviously much faster. So you may even analyze C++ code without compiling it. Example: `make -n -B` emulates compilation but does not actually compiles. So you may run `compiledb make -n -B` to generate the compilation DB without even compiling
+Even better, some compilation tools (make --dry-run) can generate the compilation DB without actually compiling the code, and this is obviously much faster. So you may even analyze C++ code without compiling it. Example: `make --dry-run -B` emulates compilation but does not actually compiles. So you may run `compiledb make --dry-run -B` to generate the compilation DB without even compiling
 
 
 ## Things to remember:
