@@ -25,7 +25,7 @@ If you can produce a compilation database in the [Clang JSON format](https://cla
 `python3 convert-compile-commands.py compile_commands.json`
 - Run the scanner
 
-Even better, some compilation tools (make --dry-run) can generate the compilation DB without actually compiling the code, and this is obviously much faster. So you may even analyze C++ code without compiling it. Example: `make --dry-run -B` emulates compilation but does not actually compiles. So you may run `compiledb make --dry-run -B` to generate the compilation DB without even compiling
+Even better, some compilation tools can generate the compilation DB without actually compiling the code (eg `make --dry-run`), and this is obviously much faster. So you may even analyze C++ code without compiling it. Example: `make --dry-run -B` emulates compilation but does not actually compiles. So you may run `compiledb make --dry-run -B` to generate the compilation DB without even compiling
 
 
 ## Things to remember:
@@ -35,6 +35,6 @@ Even better, some compilation tools (make --dry-run) can generate the compilatio
      - If the project would be a VisualC++ project you would run `build-wrapper --out-dir bw-output MSBuild.exe /t:rebuild`
 - For projects with a mix of languages, **build wrapper** must be used as soon as there is a single line of C, C++ or Objective-C
 - **build wrapper** can only be run once in the build. If your project is built through different build steps, you must wrap a top command that will build the whole project (all the build steps or at least all steps that build C, C++ or Objective-C)
-- **build wrapper** is downloadable from SonarQube, as soon as the SonarCFamily plugin is installed (URL is <SONARQUBE_ROOT_URL>/static/cpp/build-wrapper-<os>.zip)
+- **build wrapper** is downloadable from SonarQube, as soon as the SonarCFamily plugin is installed (URL is `<SONAR_HOST_URL>/static/cpp/build-wrapper-<os>.zip`)
 - **build wrapper** is redelivered with each SonarCFamily plugin so it's good practice to re download build wrapper each time you update the SonarCFamily plugin.
 This can even be done automatically each time you analyze. See the `download-build-wrapper.sh` script
