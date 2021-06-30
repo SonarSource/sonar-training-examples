@@ -27,7 +27,6 @@ warning:\s*([^\[]+)\s* # Message  (The prefix can be also note, but we'll ignore
 
 issues = []
 for line in sys.stdin:
-    print(line)
     m = p.search(line)
     if not m:
         continue   # Skip non matching lines
