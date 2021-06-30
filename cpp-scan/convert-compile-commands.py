@@ -1,3 +1,4 @@
+#!/usr/local/bin/python3
 """
 #
 # Warning: This is a workaround for builds where build-wrapper doesn't work
