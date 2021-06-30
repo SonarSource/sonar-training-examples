@@ -23,5 +23,6 @@ clang-tidy:
 comp-db:
 	compiledb make --dry-run build-only
 	mv compile_commands.json $(BUILDDIR)
+	./convert-compile-commands.py build/compile_commands.json bw-output
 
 build-only: clean $(OBJECTS)
