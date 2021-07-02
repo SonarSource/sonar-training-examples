@@ -6,7 +6,7 @@ package coverage_metrics;
 *
 */
 
-public class NewZoverageMetrics {
+public class CoverageMetrics {
 
   public float f(int i) {
    int k = 0; /* default */
