@@ -1,6 +1,6 @@
 { "issues": [
     {
-      "engineId": "fair-employer",
+      "engineId": "gdpr-check",
       "ruleId": "gender-forbidden",
       "severity":"MAJOR",
       "type":"CODE_SMELL",
@@ -17,7 +17,7 @@
       "effortMinutes": 20
     },
     {
-      "engineId": "fair-employer",
+      "engineId": "gdpr-check",
       "ruleId": "religion-forbidden",
       "severity": "CRITICAL",
       "type": "CODE_SMELL",

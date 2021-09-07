@@ -19,9 +19,9 @@ elif [ "$1" = "1" ] || [ "$1" = "2" ] || [ "$1" = "all" ]; then
 	cp $testFile.ut$ut $testFile
 fi
 
-mvn clean install -P coverage-per-test \
+mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install org.jacoco:jacoco-maven-plugin:report \
    -Dmaven.test.failure.ignore=true \
-   sonar:sonar
+   sonar:sonar \
    -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN \
    -Dsonar.exclusions=pom.xml \
    -Dsonar.projectKey="training:test-ut$ut" -Dsonar.projectName="Training: Coverage UT $ut" $*
