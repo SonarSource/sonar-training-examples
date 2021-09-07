@@ -10,7 +10,7 @@ public class CoverageMetrics {
 
   public float f(int i) {
    int k = 0; /* default */
-   if (i != 2) {
+   if (i != 0) {
       k = 1;
    }
    return (float)i/(k+1);
