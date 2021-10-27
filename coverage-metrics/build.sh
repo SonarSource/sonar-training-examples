@@ -19,7 +19,7 @@ elif [ "$1" = "1" ] || [ "$1" = "2" ] || [ "$1" = "all" ]; then
 	cp $testFile.ut$ut $testFile
 fi
 
-for branch in master partial-cov full-cov
+for branch in master partial-coverage partial-coverage-2 issue-on-test-files
 do
 	git checkout $branch
 	branchOpt=""
