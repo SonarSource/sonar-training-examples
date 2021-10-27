@@ -17,4 +17,5 @@ do
 		-Dsonar.exclusions=pom.xml \
 		-Dsonar.projectKey="training:coverage" -Dsonar.projectName="Training: Coverage" $*
 done
-exit $?
+# Return to master branch after analysis of other branches
+git checkout master
