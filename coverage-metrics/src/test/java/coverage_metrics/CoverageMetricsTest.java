@@ -15,10 +15,4 @@ public class CoverageMetricsTest {
     CoverageMetrics c = new CoverageMetrics();
     assertEquals(0.0, c.f(0), 0.0);
   }
-
-  @Test
-  public void test3() {
-    CoverageMetrics c = new CoverageMetrics();
-    float x = c.f(5);
-  }
 }
