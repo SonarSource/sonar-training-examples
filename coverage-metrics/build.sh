@@ -19,11 +19,18 @@ elif [ "$1" = "1" ] || [ "$1" = "2" ] || [ "$1" = "all" ]; then
 	cp $testFile.ut$ut $testFile
 fi
 
-mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install org.jacoco:jacoco-maven-plugin:report \
-   -Dmaven.test.failure.ignore=true \
-   sonar:sonar \
-   -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN \
-   -Dsonar.exclusions=pom.xml \
-   -Dsonar.projectKey="training:test-ut$ut" -Dsonar.projectName="Training: Coverage UT $ut" $*
-
+for branch in master partial-cov full-cov
+do
+	git checkout $branch
+	branchOpt=""
+	if [ "$branch" != "master" ]; then
+		branchOpt="-Dsonar.branch.name=$branch"
+	fi
+	mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install org.jacoco:jacoco-maven-plugin:report \
+		-Dmaven.test.failure.ignore=true \
+		sonar:sonar $branchOpt \
+		-Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN \
+		-Dsonar.exclusions=pom.xml \
+		-Dsonar.projectKey="training:test-ut$ut" -Dsonar.projectName="Training: Coverage UT $ut" $*
+done
 exit $?
