@@ -3,24 +3,16 @@
 This example demonstrates:
 - The concepts of lines to cover and conditions to cover (different from LoC/Lines)
 - The calculation of line, condition and overall coverage.
-
-Additional it shows an example of rule that applies only to test files
-The test file contains one UT without any assert statement which is bad practice and raises a violation on a rule which is rule exclusively running on test files
+- Some rules/issues on test files
 
 ## Usage
 
-- Run `build.sh 1 [<optional_analysis_properties>]` to build and analyze the project with one unit test (UT1) that will give partial coverage
-- Run `build.sh 2 [<optional_analysis_properties>]` to build and analyze the project with one unit test (UT2) that will give another partial coverage
-- Run `build.sh all [<optional_analysis_properties>]` to build and analyze the project with both UT (UT1 and UT2) that will yield 100% coverage
-
-The `build.sh` script uses different tests files depending on the parameter (1, 2 or both)
-and then runs:
-```
-mvn clean install -P coverage sonar:sonar [<optional_analysis_properties>]
-```
+- Run `build.sh` to build and analyze 3 different branches of the projects: `master`, `partial-coverage`, `partial-coverage-2` and `issue-on-test-files`
 
 ## Result
-Each different build command will create a project named "Training: Coverage Metrics X" where you can witness the resulting size metrics and coverage information
-
-## Note
-Deprecated since 5.12, JaCoCo's binary report format has been dropped with SonarJava analyser 6.0+, and this coverage training has thus been adapted for the newest XML reporting format. Find details with [this community post]
+- This creates a project in SonarQube called *Training: Coverage*
+- Each branch of the project has a different coverage due to a different set of tests
+  - `master` has 2 tests (test1 and test2) that yield 100% coverage
+  - `partial-coverage` branch has 1 test (test1) that yields 85.7% coverage
+  - `partial-coverage-2` branch has 1 test (test2) that yields 71.4% coverage
+  - `issue-on-tests-files` is a branch to show SonarQube rules specific for tests. It shows an issue on a test file that's improperly written
