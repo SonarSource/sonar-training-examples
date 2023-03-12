@@ -23,6 +23,3 @@ To generate or modify the SonarQube project, execute the command `npm run update
 - To build the application: `npm run build`;
 - To get the coverage results: `npm run test:both:coverage`;
 - To create or update the SonarQube project: `npm run update-sonar-project`.
-
-
-
