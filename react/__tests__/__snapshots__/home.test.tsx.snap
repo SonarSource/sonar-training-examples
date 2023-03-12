@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders homepage unchanged 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <main
+      class="main"
+    >
+      <form
+        data-testid="testing-form"
+      >
+        <input
+          data-testid="testing-input"
+          placeholder="test me"
+        />
+        <button
+          data-testid="testing-button"
+        >
+          Submit
+        </button>
+        <p
+          data-testid="testing-p"
+        />
+      </form>
+      <h1>
+        Home Page
+      </h1>
+      <p
+        class="description"
+      >
+        <a
+          href="/about"
+        >
+          Go To The About Page →
+        </a>
+      </p>
+    </main>
+  </div>
+</div>
+`;

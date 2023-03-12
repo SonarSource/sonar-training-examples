@@ -1,0 +1,46 @@
+{
+  "name": "react-example",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "dev:instrument": "cross-env INSTRUMENT_CODE=true next dev",
+    "build": "next build",
+    "start": "next start",
+    "tests:unit": "jest",
+    "tests:unit:watch": "jest --watch",
+    "pretests:unit:coverage": "rimraf .next coverage/jest",
+    "tests:unit:coverage": "jest --coverage",
+    "cypress": "cypress open",
+    "cypress:headless": "cypress run",
+    "tests:e2e": "start-server-and-test dev http://localhost:3000 cypress",
+    "tests:e2e-headless": "start-server-and-test dev http://localhost:3000 cypress:headless",
+    "pretests:e2e:headless:coverage": "rimraf .next coverage/cypress .nyc_output",
+    "tests:e2e:headless:coverage": "cross-env CYPRESS_COVERAGE=true start-server-and-test dev:instrument http://localhost:3000 cypress:headless",
+    "test:both:coverage": "npm run tests:unit:coverage && npm run tests:e2e:headless:coverage",
+    "update-sonar-project": "./update-sonar-project.sh"
+  },
+  "dependencies": {
+    "next": "^13.1.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "devDependencies": {
+    "@cypress/code-coverage": "^3.10.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.2.0",
+    "@types/jest": "^29.2.5",
+    "@types/react": "18.0.9",
+    "cross-env": "^7.0.3",
+    "cypress": "^12.3.0",
+    "cypress-sonarqube-reporter": "^1.12.0",
+    "jest": "28.1.0",
+    "jest-environment-jsdom": "^29.3.1",
+    "jest-sonar": "^0.2.15",
+    "rimraf": "^3.0.2",
+    "sonarqube-verify": "^1.0.2",
+    "start-server-and-test": "^1.15.2",
+    "swc-plugin-coverage-instrument": "^0.0.14",
+    "typescript": "4.6.4"
+  }
+}
