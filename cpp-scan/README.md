@@ -46,9 +46,9 @@ Even better, some compilation tools can generate the compilation DB without actu
 
 SonarQube does not support the `clang-tidy` native report format, but this report can be easily converted to the
 SonarQube [generic issue report format](https://docs.sonarqube.org/latest/analysis/generic-issue/).
-The sample `clang-tidy-to-sonar.py`python script converts from one format to the other
+The sample `clang-tidy-to-sonar.py`python script converts from one format to the other.
 Simply run your `clang-tidy`command with all desired options and send the output to a report file.
-Note: `clang-tidy`is more accurate if you can provide a compilation database. See above sectin about build-wrapper bypass to find out how to generate a compilation database.
+Note: `clang-tidy`is more accurate if you can provide a compilation database. See above section about build-wrapper bypass to find out how to generate a compilation database.
 Use the script to convert the `clang-tidy` report file to the SonarQube generic issue report format. For instance:
 ```
 compiledb make --dry-run build-only
