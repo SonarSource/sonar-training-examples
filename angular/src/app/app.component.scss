@@ -1,9 +1,20 @@
 .app-container {
     font-family: Arial, 'Arial', Helvetica, sans-serif;
 }
-h1 {
-    font-size: 20px !important;
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; // Adjust the height as needed
+  }
+  
+.content {
+    text-align: center;
 }
-img {
-    max-width: 500px;
+
+.stuff-to-do {
+    list-style-type: none;
+    padding: 0;
 }
+  

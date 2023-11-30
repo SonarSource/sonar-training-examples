@@ -20,5 +20,7 @@ build/
 .sonarqube/
 .DS_Store
 **/node_modules/
+.angular/
 angular/coverage/
+dist/
 cpp-scan/compile_commands.json
