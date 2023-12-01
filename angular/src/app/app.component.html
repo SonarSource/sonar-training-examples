@@ -1,15 +1,16 @@
 <div class="app-container">
-  <!--The content below is only a placeholder and can be replaced.-->
-  <div style="text-align:center">
-    <h1>
-      Welcome to {{ title }}!
-    </h1>
-    <img alt="SonarSource logo" src="https://www.sonarsource.com/logos/index/SonarSource-logo@2x.png" />
+  <div class="center-container">
+    <div class="content">
+      <h1>
+        Welcome to {{ title }}!
+      </h1>
+      <img alt="SonarSource logo" src="/assets/sonar-logo-horizontal.svg" />
+      <p>Things to click:</p>
+      <ul class="stuff-to-do">
+        <li><a class="first-item" href="" (click)="doStuff()">Do Stuff covered by unit tests</a></li>
+        <li><a id="doOtherStuff" href="" (click)="doOtherStuff()">Do Other Stuff covered by unit tests</a></li>
+      </ul>
+    </div>
   </div>
-  <p>Things to click:</p>
-  <ul>
-    <li><a href="" (click)="doStuff()">Do Stuff covered by unit tests</a></li>
-    <li><a id="doOtherStuff" href="" (click)="doOtherStuff()">Do Other Stuff covered by unit tests</a></li>
-  </ul>
   <router-outlet></router-outlet>
 </div>
