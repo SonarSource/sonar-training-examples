@@ -8,13 +8,21 @@ import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.attribute.PosixFilePermission;
+import java.nio.file.attribute.PosixFilePermissions;
+import java.util.Set;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Insecure {
@@ -22,33 +30,35 @@ public class Insecure {
   public void badFunction(HttpServletRequest request) throws IOException {
     String obj = request.getParameter("data");
     ObjectMapper mapper = new ObjectMapper();
-    mapper.enableDefaultTyping();
-    String val = mapper.readValue(obj, String.class);
-    File tempDir;
-    tempDir = File.createTempFile("", ".");
-    tempDir.delete();
-    tempDir.mkdir();
-    Files.exists(Paths.get("/tmp/", obj));
+    // mapper.enableDefaultTyping();
+    JavaType type = mapper.getTypeFactory().constructType(String.class);
+    String val = mapper.readValue(obj, type);
+    Set<PosixFilePermission> perms = PosixFilePermissions.fromString("rw-------");
+    Path tempDirPath = Files.createTempDirectory("secureTempDir", PosixFilePermissions.asFileAttribute(perms));
+    boolean exists = Files.exists(tempDirPath.resolve(obj));
   }
 
   public String taintedSQL(HttpServletRequest request, Connection connection) throws Exception {
     String user = request.getParameter("user");
-    String query = "SELECT userid FROM users WHERE username = '" + user  + "'";
-    Statement statement = connection.createStatement();
-    ResultSet resultSet = statement.executeQuery(query);
+    PreparedStatement statement = connection.prepareStatement("SELECT userid FROM users WHERE username = ?");
+    statement.setString(1, user);
+    ResultSet resultSet = statement.executeQuery();
     return resultSet.getString(0);
   }
   
   public String hotspotSQL(Connection connection, String user) throws Exception {
-	  Statement statement = null;
-	  statement = connection.createStatement();
-	  ResultSet rs = statement.executeQuery("select userid from users WHERE username=" + user);
+    PreparedStatement statement = connection.prepareStatement("select userid from users WHERE username=?");
+    statement.setString(1, user);
+    ResultSet rs = statement.executeQuery();
 	  return rs.getString(0);
 	}
 
 
   public void modResponse(HttpServletResponse response) {
     Cookie c = new Cookie("SECRET", "SECRET");
+    c.setSecure(true); // Set the cookie to be sent only over secure (https) connections
+    // c.setHttpOnly(true); // Make the cookie inaccessible to JavaScript
+    // c.setSameSite("Strict"); // Restrict the cookie to first-party usage only
     response.addCookie(c);
   }
 
