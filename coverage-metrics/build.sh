@@ -3,7 +3,7 @@
 # Load common environment
 . ../sqlib.sh
 
-for branch in master partial-coverage partial-coverage-2 issue-on-test-files
+for branch in master partial-coverage partial-coverage-2 issue-on-test-files mixed-languages
 do
 	git checkout $branch
 	branchOpt=""
