@@ -8,11 +8,17 @@ package coverage_metrics;
 
 public class CoverageMetrics {
 
-  public float f(int i) {
+  public float f(int i, int j) {
    int k = 0; /* default */
-   if (i != 0) {
+   if (i != 0 || j < 10) {
       k = 1;
+   }
+
+   for (i = -10; i != 10 || j < 10; i++)
+   {
+      // Do something
    }
    return (float)i/(k+1);
   }
 }
+
