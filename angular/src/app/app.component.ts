@@ -21,7 +21,7 @@ export class AppComponent {
       return args.join(', ');
     }
 
-    function doSomething(isTrue) {
+    function doSomething(isTrue: boolean) {
       var args = Array.prototype.slice.call(arguments, 1); // Noncompliant
       if (!isTrue) {
         for (var arg of args) {
