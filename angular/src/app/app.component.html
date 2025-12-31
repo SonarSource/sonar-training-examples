@@ -4,11 +4,11 @@
       <h1>
         Welcome to {{ title }}!
       </h1>
-      <img alt="SonarSource logo" src="/assets/sonar-logo-horizontal.svg" />
+      <img alt="SonarSource logo" src="/assets/Sonar_Logo_Light_Backgrounds.png" />
       <p>Things to click:</p>
       <ul class="stuff-to-do">
-        <li><a class="first-item" href="" (click)="doStuff()">Do Stuff covered by unit tests</a></li>
-        <li><a id="doOtherStuff" href="" (click)="doOtherStuff()">Do Other Stuff covered by unit tests</a></li>
+        <li><a class="first-item" href="#" (click)="doStuff(); $event.preventDefault()">Do Stuff covered by unit tests</a></li>
+        <li><a id="doOtherStuff" href="#" (click)="doOtherStuff(); $event.preventDefault()">Do Other Stuff covered by unit tests</a></li>
       </ul>
     </div>
   </div>

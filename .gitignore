@@ -24,3 +24,4 @@ build/
 angular/coverage/
 dist/
 cpp-scan/compile_commands.json
+ai-code-fix/python/venv/*
