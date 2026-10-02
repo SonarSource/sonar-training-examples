@@ -44,7 +44,7 @@ to be set in your environment (it prompts for them otherwise).
 
 ### Importing findings from elsewhere
 
-* [external-issues](external-issues/): Example of external linter issues import (Checkstyle, Pylint, Golint, Detekt) and of the generic issue format
+* [external-issues](external-issues/): Example of external linter issues import (Checkstyle, Pylint, golangci-lint, Detekt) and of the generic issue format
 
 ### AI
 

@@ -1,0 +1,16 @@
+version: "2"
+
+# "standard" is errcheck, govet, ineffassign, staticcheck and unused. revive is added on top
+# because it is the maintained successor to golint, and it keeps the var-naming findings that
+# this demo used to get from golint itself.
+linters:
+  default: standard
+  enable:
+    - revive
+  settings:
+    revive:
+      rules:
+        - name: var-naming
+        - name: exported
+        - name: indent-error-flow
+        - name: unreachable-code
