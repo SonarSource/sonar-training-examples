@@ -31,6 +31,10 @@ otherwise the analysis still shows up under the project's Pull Requests tab.
 
 ## Usage
 
+Both scripts check out branches of this repository, which swaps the whole working tree, including
+the scripts themselves. Run them from a clean `master` checkout, and commit or stash your work
+first.
+
 1. Run `./setup.sh`
 
 This will:

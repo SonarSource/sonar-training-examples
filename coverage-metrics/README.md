@@ -19,10 +19,14 @@ started from when it is done. Commit or stash your work before running it.
 
 ## Result
 - This creates a project in SonarQube called *Training: Coverage* (key `training:coverage`)
+- Read the coverage **on `CoverageMetrics.java`**, not on the project as a whole: `sonar.sources`
+  also includes `src/frontend/person.js`, which has no tests at all and so drags the project
+  total down to around 44%. That contrast is itself worth showing
 - Each branch of the project has a different coverage due to a different set of tests
-  - `master` has 3 tests (test1, test2 and test3). test1 and test2 together yield 100% coverage
-  - `partial-coverage` branch has 1 test (test1) that yields 85.7% coverage
-  - `partial-coverage-2` branch has 1 test (test2) that yields 71.4% coverage
+  - `master` has 3 tests (test1, test2 and test3). test1 and test2 together cover every line and
+    both conditions of `CoverageMetrics.f()`, so that file reaches 100%
+  - `partial-coverage` branch has 1 test (test1) that yields 85.7% coverage on that file
+  - `partial-coverage-2` branch has 1 test (test2) that yields 71.4% coverage on that file
   - `issue-on-test-files` is a branch to show SonarQube rules specific for tests. It keeps only
     test3, which calls the method under test but never asserts on the result, so SonarQube raises
     an issue for the missing assertion
