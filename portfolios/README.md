@@ -4,8 +4,8 @@ This example demonstrates the concepts of portfolios and applications using proj
 
 ## Prerequisites
 
-Portfolios and applications require Enterprise Edition or above. The three `tier*` projects and
-`bank9` also analyze several branches, which requires Developer Edition or above.
+Portfolios and applications require Enterprise Edition or above. The three `tier*` projects
+also analyze several branches, which requires Developer Edition or above.
 
 ## Usage
 

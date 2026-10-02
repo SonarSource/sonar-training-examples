@@ -1,9 +1,12 @@
 # Security example for C#
 
 ## Use case
-This example demonstrates:
-- Vulnerabilities
-- Security Hotspots
+This example demonstrates security issues in C#:
+- A `roslyn.sonaranalyzer.security.cs:S3649` SQL injection found by the taint analysis engine
+- A review-style `csharpsquid:S2077` finding on the dynamically formatted SQL query behind it
+
+Both are regular issues carrying a **security impact**, which is how the Issues page can be
+filtered to show just the security-relevant ones.
 
 ## Prerequisites
 These requirements assume you plan to set up the example from macOS:

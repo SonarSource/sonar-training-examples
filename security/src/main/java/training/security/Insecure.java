@@ -39,7 +39,7 @@ public class Insecure {
     return resultSet.getString(0);
   }
   
-  public String hotspotSQL(Connection connection, String user) throws Exception {
+  public String dynamicSQL(Connection connection, String user) throws Exception {
 	  Statement statement = null;
 	  statement = connection.createStatement();
 	  ResultSet rs = statement.executeQuery("select userid from users WHERE username=" + user);

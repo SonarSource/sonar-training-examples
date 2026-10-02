@@ -32,7 +32,7 @@ to be set in your environment (it prompts for them otherwise).
 
 ### Security
 
-* [security](security/): Example of Java Vulnerabilities and Security Hotspots, including custom sources, sanitizers and sinks
+* [security](security/): Example of Java security issues, including custom sources, validators and sinks
 
 * [security-cs](security-cs/): The same idea in C#, with a SQL injection introduced as new code
 

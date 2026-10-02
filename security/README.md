@@ -2,11 +2,11 @@
 
 ## Use case
 This example demonstrates:
-- Vulnerabilities found by the taint analysis engine (`javasecurity:*` rules)
+- Injection findings from the taint analysis engine (`javasecurity:*` rules)
 - Review-style security findings such as weak cryptography, insecure cookies and unsafe temp files
 
-Note that SonarQube no longer has a separate "Security Hotspot" category; what used to be raised
-as hotspots is now raised as regular issues with a security impact.
+Every finding is a regular issue carrying a **security impact**, which is how the Issues page can
+be filtered to show just the security-relevant ones.
 
 It also demonstrates the possibility to define your own custom sources, validators and sinks to detect more injection cases
 (or avoid false positives)
@@ -19,7 +19,12 @@ This will:
 - Delete the project key **training:security** if it exists in SonarQube (to start from a scratch)
 - Run `mvn clean verify sonar:sonar` to re-create the project
 
-Project consists of a single class (`training.security.Insecure`, in `src/main/java/training/security/Insecure.java`) with a number of Vulnerabilities and Security Hotspots.
+Project consists of a single class (`training.security.Insecure`, in `src/main/java/training/security/Insecure.java`).
+Expect around 22 issues, 11 of them with a security impact: two `javasecurity:S3649` SQL
+injections and one `javasecurity:S6549` path traversal at BLOCKER, plus review-style findings on
+Jackson deserialization (`java:S4544`), world-writable directories (`java:S5443`), temp file
+creation (`java:S5445`), a short RSA key (`java:S4426`), dynamically formatted SQL (`java:S2077`)
+and cookies missing the `HttpOnly` and `secure` flags (`java:S3330`, `java:S2092`).
 
 ## Custom security configuration 
 At the bottom of the class you see a bunch of methods that demonstrate custom injections.
