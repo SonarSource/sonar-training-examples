@@ -3,34 +3,46 @@
 ## Use case
 This example demonstrates:
 - Scanning of a Pull Request
-- Addition of a Status Check to Pull Request on GitHub
+- Pull request decoration on GitHub
+
+## Prerequisites
+
+Pull request analysis requires Developer Edition or above.
+
+For the decoration part, bind the project to GitHub under
+**Administration > DevOps Platform Integrations > GitHub** in SonarQube, then set the project's
+**Project Settings > General Settings > DevOps Platform Integration** to that configuration. The
+old global `sonar.pullrequest.provider`, `sonar.pullrequest.github.*` and `sonar.alm.github.app.*`
+properties no longer exist. The GitHub App for this example is `sonarsource-training-examples`
+(app id 28687); ask the training team for its private key.
+
+A pull request analysis needs a **pr-demo** branch. It is not in this repository, so create one
+locally before you start, for example:
+
+```
+git checkout -b pr-demo master
+# make a small change that introduces an issue in src/
+git commit -am "Introduce an issue for the PR demo"
+git checkout master
+```
+
+If you push `pr-demo` and open a real pull request on GitHub, you also get the decoration;
+otherwise the analysis still shows up under the project's Pull Requests tab.
 
 ## Usage
-
-Before running, make sure there is no open pull request on GitHub.com for branch
-**pr-demo** (close if there is) and the following properties are set on your
-SonarQube instance:
-
-| Property                                | Value                         |
-| ----------------------------------------|-------------------------------|
-| sonar.pullrequest.provider              | GitHub                        |
-| sonar.pullrequest.github.endpoint       | https://api.github.com/       |
-| sonar.alm.github.app.name               | sonarsource-training-examples |
-| sonar.alm.github.app.id                 | 28687                         |
-| sonar.alm.github.app.privateKey.secured | Retrieve value from https://drive.google.com/file/d/17g5in0_BiL6zwiOYQCBnG3vCDFGJHaKX/view?usp=sharing    |
 
 1. Run `./setup.sh`
 
 This will:
-- Delete the project key **training:pull-request** if it exists in SonarQube (to start from a scratch)
-- Checkout the master branch from GitHub
-- Run an analysis on the master
+- Delete the project key **training:pull-request** if it exists in SonarQube (to start from scratch)
+- Check out the master branch
+- Run an analysis on master, which becomes the branch the pull request is compared against
 
-2.  Create a PR on GitHub.com existing branch **pr-demo** to **master** .  Note the PR key
+2. Create a PR from branch **pr-demo** to **master**. Note the PR key (its number)
 
 3. Run `./scan-pr.sh PR_KEY`
 
 This will:
-- Checkout the pr-demo branch from GitHub
-- Run a PR analysis on the pr-demo branch
-- Set Status Check on PR on GitHub
+- Check out the pr-demo branch
+- Run a PR analysis of pr-demo against master
+- Decorate the PR on GitHub, if the project is bound to GitHub

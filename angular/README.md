@@ -1,8 +1,8 @@
 # Sonar Angular Example
 
-This project was originally generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.1.
+This project was originally generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.1 and has since been kept up to date; it currently runs on Angular 22.
 
-Install `npm` to install dependencies: `npm install`. Make sure you have Node.js 20 or higher along with npm available on your PATH. Additionally, the test configuration for this project expects Google Chrome to be installed (modify `karma.conf.js` for other browsers and configurations).
+Install `npm` to install dependencies: `npm install`. Make sure you have Node.js 22.22.3 or higher along with npm available on your PATH. Additionally, the test configuration for this project expects Google Chrome to be installed (modify `karma.conf.js` for other browsers and configurations). If Karma cannot find Chrome, point `CHROME_BIN` at it.
 
 ## Sonar Scanning and Code Coverage
 
@@ -25,10 +25,6 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
 ## Further help
 

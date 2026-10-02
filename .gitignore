@@ -24,4 +24,7 @@ build/
 angular/coverage/
 dist/
 cpp-scan/compile_commands.json
+cpp-scan/bw-output/
+cpp-scan/wrapper/
+external-issues/reports/
 ai-code-fix/python/venv/*

@@ -4,7 +4,7 @@
       "methodId": "training.security.Insecure#getInput(Ljava/lang/String;)Ljava/lang/String;"
     }
   ],
-  "sanitizers": [
+  "validators": [
     {
       "methodId": "training.security.Insecure#verifyData(Ljava/lang/String;)V",
       "args": [
@@ -19,5 +19,5 @@
         1
       ]
     }
-  ]  
+  ]
 }

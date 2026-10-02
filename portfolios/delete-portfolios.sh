@@ -7,17 +7,27 @@ DEF_FILE=portfolios-def.txt
 
 me=$(basename $0)
 if [ "$1" != "" ]; then
-	echo "Usage: $me [-h]"
-	exit 1
+	echo "Usage: $me [-h|-?]"
+	echo ""
+	echo "Deletes the portfolios and the application described in $DEF_FILE."
+	case "$1" in
+	-h|-\?) exit 0 ;;
+	*) exit 1 ;;
+	esac
 fi
 
-nbportfolios=$(cat $DEF_FILE | wc -l)
-i=$nbportfolios
+# Reverse the definitions so parents are deleted before the portfolios they reference
+reverse() {
+	tail -r "$1" 2>/dev/null || tac "$1"
+}
 
-while [ $i -ge 1 ]; do
-   portfolio=`cat $DEF_FILE | head -n $i | tail -n 1`
-	key=$(echo "$portfolio" | cut -d "," -f 1)
-   echo "Deleting portfolio key $key"
-	curl -X POST -u $SONAR_TOKEN: $SONAR_HOST_URL/api/views/delete?key=$key
-   let i=$(expr $i-1)
+reverse $DEF_FILE | while IFS=, read -r key name mode params desc; do
+	[ -z "$key" ] && continue
+	echo "Deleting portfolio key $key"
+	if [ "$mode" == "APPLICATION" ]; then
+		curl -s -X POST -u $SONAR_TOKEN: --data-urlencode "application=$key" "$SONAR_HOST_URL/api/applications/delete"
+	else
+		curl -s -X POST -u $SONAR_TOKEN: --data-urlencode "key=$key" "$SONAR_HOST_URL/api/views/delete"
+	fi
+	echo ""
 done
