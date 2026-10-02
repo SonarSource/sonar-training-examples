@@ -28,3 +28,5 @@ cpp-scan/bw-output/
 cpp-scan/wrapper/
 external-issues/reports/
 ai-code-fix/python/venv/*
+# Written by "metrics-without-scm/demo.sh add-code", removed again by "demo.sh reset"
+metrics-without-scm/src/*.2.cbl
