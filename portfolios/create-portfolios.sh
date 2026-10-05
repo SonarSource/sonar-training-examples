@@ -7,46 +7,60 @@ DEF_FILE=portfolios-def.txt
 
 me=$(basename $0)
 if [ "$1" != "" ]; then
-	echo "Usage: $me [-h]"
-	exit 1
+	echo "Usage: $me [-h|-?]"
+	echo ""
+	echo "Creates the portfolios and the application described in $DEF_FILE."
+	echo "Portfolios and applications require Enterprise Edition or above."
+	case "$1" in
+	-h|-\?) exit 0 ;;
+	*) exit 1 ;;
+	esac
 fi
 
-let finished=0
-let i=1
-nbportfolios=$(cat $DEF_FILE | wc -l)
+# POST to a web service, URL-encoding every parameter given as key=value
+sqpost() {
+	local path=$1
+	shift
+	local args=()
+	for param in "$@"; do
+		args+=(--data-urlencode "$param")
+	done
+	curl -s -X POST -u $SONAR_TOKEN: "${args[@]}" "$SONAR_HOST_URL/$path" 1>/dev/null
+}
 
-while [ $i -le $nbportfolios ]; do
-   portfolio=`cat $DEF_FILE | head -n $i | tail -n 1`
-	key=$(echo "$portfolio" | cut -d "," -f 1)
-	name=$(echo "$portfolio" | cut -d "," -f 2 | sed 's/ /%20/g')
-	mode=$(echo "$portfolio" | cut -d "," -f 3 | sed 's/ /%20/g')
-	params=$(echo "$portfolio" | cut -d "," -f 4)
-	desc=$(echo "$portfolio" | cut -d "," -f 5 | sed 's/ /%20/g')
-   echo "Creating portfolio key $key, name $name, mode $mode, params $params"
-   if [ "$mode" == "APPLICATION" ]; then
-      qualifier="&qualifier=APP"
-   fi
-	curl -s -X POST -u $SONAR_TOKEN: "$SONAR_HOST_URL/api/views/create?name=$name&key=$key&description=$desc$qualifier" 1>/dev/null
-   case $mode in
+while IFS=, read -r key name mode params desc; do
+	[ -z "$key" ] && continue
+	echo "Creating portfolio key $key, name $name, mode $mode, params $params"
+
+	case $mode in
+	APPLICATION)
+		sqpost api/applications/create "key=$key" "name=$name" "description=$desc"
+		for projkey in $params; do
+			echo "Adding project key $projkey to application"
+			sqpost api/applications/add_project "application=$key" "project=$projkey"
+		done
+		;;
 	REGEXP)
-		regexp=$(echo $params | sed 's/ /%20/g')
-		curl -s -X POST -u $SONAR_TOKEN: "$SONAR_HOST_URL/api/views/mode?key=$key&selectionMode=$mode&regexp=$regexp" 1>/dev/null
-      ;;
-   MANUAL|APPLICATION)
-      for projkey in $params; do
-         echo "Adding project key $projkey to portfolio/application"
-   		curl -s -X POST -u $SONAR_TOKEN: "$SONAR_HOST_URL/api/views/add_project?key=$key&project_key=$projkey" 1>/dev/null
-  	   done
-      ;;
-   PARENT)
-      for subportkey in $params; do
-         echo "Adding sub-portfolio key $subportkey to portfolio"
-   		curl -s -X POST -u $SONAR_TOKEN: "$SONAR_HOST_URL/api/views/add_local_view?key=$key&ref_key=$subportkey" 1>/dev/null
-  	   done
-      ;;
-   *)
-      echo "Unknown mode $mode, skipped"
-      ;;
-   esac
-   let i=$(expr $i+1)
-done
+		sqpost api/views/create "key=$key" "name=$name" "description=$desc"
+		sqpost api/views/set_regexp_mode "portfolio=$key" "regexp=$params"
+		;;
+	MANUAL)
+		sqpost api/views/create "key=$key" "name=$name" "description=$desc"
+		sqpost api/views/set_manual_mode "portfolio=$key"
+		for projkey in $params; do
+			echo "Adding project key $projkey to portfolio"
+			sqpost api/views/add_project "key=$key" "project=$projkey"
+		done
+		;;
+	PARENT)
+		sqpost api/views/create "key=$key" "name=$name" "description=$desc"
+		for subportkey in $params; do
+			echo "Adding sub-portfolio key $subportkey to portfolio"
+			sqpost api/views/add_portfolio "portfolio=$key" "reference=$subportkey"
+		done
+		;;
+	*)
+		echo "Unknown mode $mode, skipped"
+		;;
+	esac
+done <$DEF_FILE

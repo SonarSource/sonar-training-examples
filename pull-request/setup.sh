@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 # Load common environment
@@ -9,6 +8,6 @@ PK="training:pull-request"
 # Delete existing project
 curl -X POST -u $SONAR_TOKEN: $SONAR_HOST_URL/api/projects/delete?project=$PK
 
-# Scan initial master branch
+# Scan the main branch, which the pull request will be compared against
 git checkout master
-sonar-scanner -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=$PK
+sonar-scanner -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.token=$SONAR_TOKEN -Dsonar.projectKey=$PK

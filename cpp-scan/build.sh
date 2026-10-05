@@ -12,22 +12,26 @@ for cmd in $*; do
     case $cmd in
         clean)
             rm -rf $BUILDDIR
-            mkdir $BUILDDIR
+            mkdir -p $BUILDDIR
             ;;
         build)
             # Build directly each file
+            mkdir -p $BUILDDIR
             for file in src/*.cc; do
                 target=$(basename $file .cc)
-                g++ -Wall -o $BUILDDIR/$target.o $file
+                g++ -Wall -c -o $BUILDDIR/$target.o $file
             done
             ;;
         clang-tidy)
-        	clang-tidy -checks='*' -header-filter="^include" -p . src/*.cc > $BUILDDIR/clang-tidy-report.txt
+            mkdir -p $BUILDDIR
+        	clang-tidy -checks='*' -header-filter="^include" -p $BUILDDIR src/*.cc > $BUILDDIR/clang-tidy-report.txt
 	        ./clang-tidy-to-sonar.py < $BUILDDIR/clang-tidy-report.txt > $BUILDDIR/generic-issue-report.json
             ;;
         comp-db)
+            mkdir -p $BUILDDIR
             compiledb make --dry-run build-only
             mv compile_commands.json $BUILDDIR
+            ./convert-compile-commands.py $BUILDDIR/compile_commands.json bw-output
             ;;
         *)
             echo "Usage: $0 [clean] [comp-db] [build] [clang-tidy]"

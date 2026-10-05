@@ -1,10 +1,13 @@
 /*
  *
- * HelloWorld (c) SonarSource Consulting Team 2017 ;-)
- * 
+ * (c) SonarSource Consulting Team 2017 ;-)
+ *
  * 1. Analyze once, as is
- * 2. Rename file to HelloWorld.java and change package and class name accordingly
- * 3. Analyze again then see the (different) effect on the analysis on SQ 5.6 and 6.x
+ * 2. Run ./rename.sh to rename the file, its directory, its package and its class
+ * 3. Analyze again and see that the issues kept their history
+ *
+ * Keep the class name out of the comments above: SonarQube only follows a renamed file
+ * when the new content is similar enough to the old one.
  *
  */
 
